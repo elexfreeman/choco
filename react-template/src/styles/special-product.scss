@@ -1,0 +1,35 @@
+.special-product {
+  background-color: #fff;
+  margin-bottom: 2rem;
+  padding: 1rem;
+
+  .price-wrap {
+    overflow: auto;
+    line-height: 1rem;
+
+    .old-price {
+      color: $gray-color;
+      float: left;
+      height: 1.5rem;
+      padding-right: 1rem;
+      font-weight: 100;
+    }
+
+    .new-price {
+      color: #000;
+      font-size: 1rem;
+      float: left;
+      height: 1.5rem;
+    }
+  }
+
+  .caption {
+    color: $primary-color;
+  }
+
+  .description {
+    color: $gray-color;
+    max-height: 3rem;
+    overflow: hidden;
+  }
+}

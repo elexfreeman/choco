@@ -1,0 +1,68 @@
+<ul class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a routerLink="/">Главная</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a routerLink="/categories">Категории</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a>Редактирование категории</a>
+    </li>
+</ul>
+
+<div id="introduction" class="container">
+    <h3 class="s-title">Редактирование категории</h3>
+    <div class="docs-note">
+        <div class="columns">
+            <div class="column col-gapless">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-3 col-sm-12">
+                            <label class="form-label">Название</label>
+                        </div>
+                        <div class="col-9 col-sm-12">
+                            <input [(ngModel)]="category.caption" class="form-input" type="text"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-3 col-sm-12">
+                            <label class="form-label">URL</label>
+                        </div>
+                        <div class="col-9 col-sm-12">
+                            <input [(ngModel)]="category.url" class="form-input" type="text"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-3 col-sm-12">
+                            <label class="form-label">Картинка</label>
+                        </div>
+                        <div class="col-4 col-sm-12">
+                            <fancy-image-uploader [options]="options"
+                                                  (onUpload)="onUpload($event)"></fancy-image-uploader>
+
+                        </div>
+                        <div class="col-4 col-sm-12">
+                            <img class="img-responsive" [src]="rest+category.img">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Описание</label>
+                        <textarea [(ngModel)]="category.description" class="form-input" rows="3"></textarea>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="form-group">
+                        <button type="button" (click)="save()" class="btn btn-success"><i class="icon icon-check"></i>
+                            Сохранить
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-modal-dialog
+        [(show)]="onModalShow"
+        (onDone)="onDialogDone($event)"
+        [title]="'Готово'"
+        [content]="'Категория обновлена'"></app-modal-dialog>

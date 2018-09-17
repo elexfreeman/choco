@@ -1,0 +1,33 @@
+<% include base/head %>
+    <div class="docs-container off-canvas off-canvas-sidebar-show">
+        <% include base/navbar %>
+            <div id="content" class="docs-content off-canvas-content">
+                <div class="main-container">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/">Главная</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a> <%=product.caption %></a>
+                        </li>                        
+                    </ul>
+                    <h1 class="s-title">
+                        <a href="#grid" class="anchor" aria-hidden="true">#</a>
+                        <%=product.caption %>
+                    </h1>
+                    <div class="columns">
+                        <div class="column col-xs-3">
+                            <img style="width: 400px" id="zoom_01" data-zoom-image="<%=product.main_img %>" src="<%=product.main_img %>">
+                        </div>
+                        <div class="column col-xs-3"><%-product.description %></div>
+
+                    </div>
+
+
+                </div>
+                <% include base/docfooter %>
+            </div>
+    </div>
+<script src="/common.js"></script>
+<script src="/product.js"></script>
+    <% include base/footer %>

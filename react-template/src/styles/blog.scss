@@ -1,0 +1,31 @@
+.blog-rows {
+  .blog-item {
+    .caption {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      padding-top: 1rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-rows {
+    .blog-item {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .blog-rows {
+    .blog-item {
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      .caption{
+        font-size: 1rem;
+        line-height: 1rem;
+      }
+    }
+  }
+}

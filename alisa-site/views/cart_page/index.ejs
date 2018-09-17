@@ -1,0 +1,26 @@
+<% include ../base/head %>
+  <% include ../components/menu/menu_top %>
+
+    <div class="product-page">
+      <div class="center-container-wrap-g">
+        <div class="container grid-xl center-container">
+          <div class="columns">
+            <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-3">
+              <% include ../components/menu/menu_left %>
+            </div>
+            <div class="column col-xs-12 col-md-12 col-sm-12 col-lg-8 col-xl-8 col-9">
+              <div class="base-head">Корзина</div>
+
+              <div id='cart_container'></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <% include ../base/footer %>
+    </div>
+
+    <script type="text/javascript" src="/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/cart.js" charset="utf-8"></script>
+
+    <% include ../base/bottom %>

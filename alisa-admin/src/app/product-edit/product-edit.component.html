@@ -1,0 +1,147 @@
+<ul class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a routerLink="/">Главная</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a routerLink="/products">Товары</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a>Редактирование товара</a>
+    </li>
+</ul>
+
+<div id="introduction" class="container">
+    <h3 class="s-title">Редактирование товара</h3>
+    <div class="docs-note">
+        <div class="columns">
+            <div class="column col-gapless">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-3 col-sm-12">
+                            <label class="form-label">Название</label>
+                        </div>
+                        <div class="col-9 col-sm-12">
+                            <input [(ngModel)]="product.caption" class="form-input" type="text"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-3 col-sm-12">
+                            <label class="form-label">Цена</label>
+                        </div>
+                        <div class="col-5 col-sm-12">
+                            <input [(ngModel)]="product.price" class="form-input" type="number"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-3 col-sm-12">
+                            <label class="form-label">Главная картинка</label>
+                        </div>
+                        <div class="col-4 col-sm-12">
+                            <fancy-image-uploader [options]="options"
+                                                  (onUpload)="onUploadMainImg($event)"></fancy-image-uploader>
+                        </div>
+                        <div class="col-4 col-sm-12">
+                            <img class="img-responsive" [src]="rest+product.main_img">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-3 col-sm-12">
+                            <label class="form-label">Категории</label>
+                        </div>
+                        <label class="form-checkbox" *ngFor="let c of product.categories" for="cc_{{c.id}}" >
+                            <input [(ngModel)]="c.checked" id="cc_{{c.id}}" type="checkbox">
+                            <i class="form-icon"></i> {{c.caption}}
+                        </label>
+                    </div>
+
+                    <div class="form-group" *ngIf="manufacturerList">
+                        <div class="col-3 col-sm-12">
+                            <label class="form-label">Производитель</label>
+                        </div>
+
+                        <select  [(ngModel)]="product.manufacturer_id"  class="form-select">
+                            <option value="0">Нет</option>
+                            <option value="{{m.id}}" *ngFor="let m of manufacturerList">{{m.caption}}</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="form-label">Описание</label>
+                        <textarea [(ngModel)]="product.description" class="form-input" rows="5"></textarea>
+                    </div>
+
+                    <!--*******************-->
+                    <div class="form-group">
+                        <div class="col-3 col-sm-12">
+                            <label class="form-label">Картинка 1</label>
+                        </div>
+                        <div class="col-4 col-sm-12">
+                            <fancy-image-uploader [options]="options"
+                                                  (onUpload)="onUploadImg1($event)"></fancy-image-uploader>
+                        </div>
+                        <div class="col-4 col-sm-12">
+                            <img class="img-responsive" [src]="rest+product.img1">
+                        </div>
+                    </div>
+
+                    <!--*******************-->
+                    <div class="form-group">
+                        <div class="col-3 col-sm-12">
+                            <label class="form-label">Картинка 2</label>
+                        </div>
+                        <div class="col-4 col-sm-12">
+                            <fancy-image-uploader [options]="options"
+                                                  (onUpload)="onUploadImg2($event)"></fancy-image-uploader>
+                        </div>
+                        <div class="col-4 col-sm-12">
+                            <img class="img-responsive" [src]="rest+product.img2">
+                        </div>
+                    </div>
+
+                    <!--*******************-->
+                    <div class="form-group">
+                        <div class="col-3 col-sm-12">
+                            <label class="form-label">Картинка 3</label>
+                        </div>
+                        <div class="col-4 col-sm-12">
+                            <fancy-image-uploader [options]="options"
+                                                  (onUpload)="onUploadImg3($event)"></fancy-image-uploader>
+                        </div>
+                        <div class="col-4 col-sm-12">
+                            <img class="img-responsive" [src]="rest+product.img3">
+                        </div>
+                    </div>
+
+                    <!--*******************-->
+                    <div class="form-group">
+                        <div class="col-3 col-sm-12">
+                            <label class="form-label">Картинка 4</label>
+                        </div>
+                        <div class="col-4 col-sm-12">
+                            <fancy-image-uploader [options]="options"
+                                                  (onUpload)="onUploadImg4($event)"></fancy-image-uploader>
+                        </div>
+                        <div class="col-4 col-sm-12">
+                            <img class="img-responsive" [src]="rest+product.img4">
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+                    <div class="form-group">
+                        <button type="button" (click)="save()" class="btn btn-success"><i class="icon icon-check"></i>
+                            Сохранить
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-modal-dialog
+        [(show)]="onModalShow"
+        (onDone)="onDialogDone($event)"
+        [title]="'Готово'"
+        [content]="'Товар добавлена'"></app-modal-dialog>

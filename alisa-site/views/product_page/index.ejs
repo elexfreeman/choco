@@ -1,0 +1,52 @@
+<% include ../base/head %>
+  <% include ../components/menu/menu_top %>
+
+    <div class="product-page">
+      <div class="center-container-wrap-g">
+        <div class="container grid-xl center-container">
+          <div class="columns">
+            <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-3">
+              <% include ../components/menu/menu_left %>
+            </div>
+            <div class="column col-xs-12 col-md-12 col-sm-12 col-lg-8 col-xl-8 col-9">
+
+              <div class="columns">
+                <div class="product-img column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-4">
+                    <div id="product_img" img='<%=product.main_img %>'>
+                        <img class="img-responsive" src='<%=product.main_img %>' alt='rouse.one - <%=product.caption %>'>
+                    </div>
+                </div>
+                <div class="product-info column col-xs-12 col-sm-12 col-lg-8 col-xl-8 col-8">
+                  <div class="info">
+                    <h1 class="caption"><%=product.caption %></h1>
+                    <div class="availability">Доступность:<span>На складе</span></div>
+                    <hr>
+                    <div class="only_left">Осталось:<span>100 шт.</span></div>
+                    <div class="price"><%=product.price %> руб.</div>
+                    <div class="description">
+                      <%=product.caption %>
+                    </div>
+                    <div class="product-order" id='product_order' product_id="<%=product.id %>" price="<%=product.price %>">
+
+                    </div>
+                  </div>
+                </div>
+                <div class="details column col-xs-12">
+                  <div class="base-head">Детали</div>
+                  <div>
+                      <%=product.caption %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <% include ../base/footer %>
+    </div>
+
+    <script type="text/javascript" src="/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/product.js" charset="utf-8"></script>
+
+    <% include ../base/bottom %>

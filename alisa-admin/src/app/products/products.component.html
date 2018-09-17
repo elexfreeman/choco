@@ -1,0 +1,61 @@
+<ul class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a routerLink="/">Главная</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a>Товары</a>
+    </li>
+</ul>
+
+<div id="introduction" class="container">
+    <h3 class="s-title">Товары <a routerLink="/products-add" class="btn btn-action"><i class="icon icon-plus"></i></a></h3>
+    <div class="docs-note">
+        <div class="columns">
+            <table datatable [dtOptions]="dtOptions" class="row-border hover ">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th style="width: 10%"></th>
+                    <th>Наименование</th>
+                    <th></th>
+                    <th>Цена</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let p of products">
+                    <td>{{p.id}}</td>
+                    <td><a routerLink="/products/{{p.id}}" class="btn"><i class="icon icon-edit"></i></a></td>
+                    <td>{{p.caption}}</td>
+                    <td><img class="preview-img" [src]="rest + p.main_img" /></td>
+                    <td>{{p.price}}</td>
+                    <td><button class="btn btn-error"><i class="icon icon-stop"></i></button></td>
+                </tr>
+                <tr *ngIf="products?.length == 0">
+                    <td colspan="3" class="no-data-available">No data!</td>
+                </tr>
+                </tbody>
+            </table>
+        <!--    <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th></th>
+                    <th>Наименование</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let p of products">
+                    <td>{{p.id}}</td>
+                    <td><a routerLink="/products/{{p.id}}" class="btn"><i class="icon icon-edit"></i></a></td>
+                    <td>{{p.caption}}</td>
+                    <td><img class="preview-img" [src]="rest + p.main_img" /></td>
+                    <td><button class="btn btn-error"><i class="icon icon-stop"></i></button></td>
+                </tr>
+                </tbody>
+            </table>-->
+        </div>
+    </div>
+</div>

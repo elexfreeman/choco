@@ -1,0 +1,37 @@
+<ul class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a routerLink="/">Главная</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a>Категории</a>
+    </li>
+</ul>
+
+<div id="introduction" class="container">
+    <h3 class="s-title">Категории <a routerLink="/categories-add" class="btn btn-action"><i class="icon icon-plus"></i></a>
+    </h3>
+    <div class="docs-note">
+        <div class="columns ">
+            <div *ngFor="let category of categories" class="column col-4 col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                    <div class="card-image">
+
+                        <img [src]="rest+category.img"
+                             class="img-responsive"/>
+                    </div>
+                    <div class="card-header">
+                        <div class="card-title h5">{{category.caption}}</div>
+
+                    </div>
+                    <div class="card-body">
+                        {{category.description}}
+                    </div>
+                    <div class="card-footer">
+                        <a routerLink="/categories/{{category.id}}" class="btn btn-primary">Редатировать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

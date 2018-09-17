@@ -1,0 +1,32 @@
+.footer {
+
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  .head {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #484848;
+    font-weight: 600;
+  }
+
+  .footer-link {
+    padding: 0.5rem 0.5rem 0.5rem 0;
+
+    a {
+      color: $gray-color;
+    }
+  }
+}
+
+
+
+@media (max-width: 414px) {
+  .footer{
+    .head {
+      padding-top: 1rem;
+    }
+
+  }
+}

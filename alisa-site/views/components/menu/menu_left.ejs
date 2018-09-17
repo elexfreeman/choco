@@ -1,0 +1,43 @@
+<div class="menu-left">
+    <div class="head">Категории</div>
+    <div class="menu">
+        <% categories.forEach(function(c) { %>
+        <div class="item"><a href='/category/<%= c.url %>'><%= c.caption %></a></div>
+        <% }); %>
+    </div>
+
+    <% if((manufacturer != null) && (manufacturer.length > 0)) { %>
+    <div class="head">Производители</div>
+    <div class="menu">
+        <% manufacturer.forEach(function(m) { %>
+        <div class="item"><a href='/manufacturer/<%= m.url %>'><%= m.caption %></a></div>
+        <% }); %>
+    </div>
+    <% } %>
+
+    <% if((discont != null) && (discont.length > 0)) { %>
+    <div class="base-head">Акции</div>
+    <% discont.map((p, key) =>{ %>
+    <div class="special-product">
+        <div class="columns">
+            <div class="column col-5">
+                <a href='/<%= p.url %>'>
+                    <img class="img-responsive" src="http://rouse.one<%= p.main_img %>">
+                </a>
+            </div>
+            <div class="column col-7">
+                <div class="price-wrap">
+                    <div class="old-price">
+                        <%= p.price %> руб.
+                    </div>
+                    <div class="new-price"><%= parseInt(p.price - (p.price * p.discont / 100)) %> руб.</div>
+                </div>
+                <div class="caption"><%= p.caption %></div>
+                <!--<div class="description">Описание продукта Описание продукта Описание продукта Описание продукта</div>-->
+            </div>
+        </div>
+    </div>
+    <% }); %>
+    <% } %>
+
+</div>

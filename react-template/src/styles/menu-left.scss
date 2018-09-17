@@ -1,0 +1,20 @@
+.menu-left {
+  .head {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 1rem;
+    padding-left:1.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .menu {
+    margin-bottom: 2rem;
+    .item {
+      padding: 1rem;
+        padding-left:1.5rem;
+      color: $gray-color;
+    }
+  }
+}

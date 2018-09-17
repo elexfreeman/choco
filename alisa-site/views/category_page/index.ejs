@@ -1,0 +1,38 @@
+<% include ../base/head %>
+<% include ../components/menu/menu_top %>
+
+<div class="main-page">
+    <div class="center-container-wrap-g">
+        <div class="container grid-xl center-container">
+            <div class="columns">
+                <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-3">
+                    <% include ../components/menu/menu_left %>
+                </div>
+                <div class="column col-xs-12 col-md-12 col-sm-12 col-lg-8 col-xl-8 col-9">
+
+                    <div class="category-cover" >
+                        <div class="cover-container" style="background-image: url('<%= category.img %>')">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column col-3 col-md-12 col-sm-12"></div>
+                                    <div class="column col-6  col-md-12 col-sm-12">
+                                        <h1><%= category.caption %></h1>
+                                          <h2><%= category.description %></h2>
+                                    </div>
+                                        <div class="column col-3 col-md-12 col-sm-12"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% include ../components/products %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <% include ../base/footer %>
+    </div>
+    <script type="text/javascript" src="/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/category.js" charset="utf-8"></script>
+
+    <% include ../base/bottom %>
