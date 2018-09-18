@@ -62,8 +62,10 @@ $body-color: #828a90;
 @import './main-page-slider.scss';
 @import './main-page-categories.scss';
 @import './product-page.scss';
-$fa-font-path: "../../node_modules/font-awesome/fonts";
-@import '../../node_modules/font-awesome/scss/font-awesome.scss';
+@import './breadcrumb.scss';
+$fa-font-path: "/fonts";
+
+@import "~font-awesome/scss/font-awesome";
 
 .center-container-wrap-g {
   background-color: $gray-bg;

@@ -12,7 +12,7 @@ function get() {
                 if (data.length > 0) {
                     resolve(data);
                 } else {
-                    resolve(false);
+                    resolve('menu error');
                 }
 
             } else {

@@ -10,7 +10,6 @@ import {BrowserRouter} from 'react-router-dom';
 import store from './redux/store';
 
 
-import './styles/main.scss';
 import CartButton from "./cart/CartButton";
 import {onGetCart} from './redux/actions/cart';
 import {onUpdateUserData} from './redux/actions/userInfo';

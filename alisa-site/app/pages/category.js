@@ -3,6 +3,7 @@ let router = express.Router();
 let Categories = require('../../models/categories');
 let left_menu = require('../../models/left_menu');
 let Products = require('../../models/products');
+const SeoModel = require("../models/seo_model");
 /* GET home page. */
 router.get('/', function (req, res, next) {
 
@@ -22,6 +23,8 @@ router.get('/', function (req, res, next) {
     /*акции*/
     let discont = [];
     let manufacturer = [];
+
+    let seo_call = {};
 
 
     left_menu().then((c) => {
@@ -43,23 +46,34 @@ router.get('/', function (req, res, next) {
         return Categories.getProducts(Url);
 
     }).then(resp => {
-        /* seo */
-        let title = 'Rouse.One - ' + category.caption;
-        let description = 'Rouse.One - Интернет магазин экологичекий косметики';
-        let keywords = '';
-        category.products = resp;
 
+        category.products = resp;
+        return SeoModel.Get('category');
+
+
+    }).then(seo => {
+        seo_call = seo;
         res.render('category_page/index', {
-            title: title,
-            description: description,
-            keywords: keywords,
-            category: category,
-            categories: categories
+            seo: seo_call
+            , categories: categories
+            , category : category
             , products_new: products_new
             , products_popular: products_popular
             , discont: discont
             , Url: Url
             , manufacturer: manufacturer
+        });
+    }).catch(e => {
+        res.render('category_page/index', {
+            seo: seo_call
+            , categories: categories
+            , category : category
+            , products_new: products_new
+            , products_popular: products_popular
+            , discont: discont
+            , Url: Url
+            , manufacturer: manufacturer
+            , e: e
         });
     });
 

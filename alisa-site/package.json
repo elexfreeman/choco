@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "test": "mocha"
   },
   "dependencies": {
     "angular": "^1.6.9",
     "base64url": "^2.0.0",
     "body-parser": "~1.18.2",
+    "chai": "^4.1.2",
     "compression": "^1.7.2",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.4",
@@ -23,6 +25,7 @@
     "formidable": "^1.2.0",
     "imports-loader": "^0.8.0",
     "jquery": "^3.3.1",
+    "mocha": "^5.2.0",
     "morgan": "~1.9.0",
     "multer": "^1.3.1",
     "mysql": "^2.15.0",

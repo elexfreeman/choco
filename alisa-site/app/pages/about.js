@@ -2,26 +2,23 @@ let express = require('express');
 let router = express.Router();
 
 let left_menu = require('../../models/left_menu');
-let Products = require('../../models/products');
 
+const SeoModel = require('../models/seo_model');
 /* GET home page. */
 router.get('/', function (req, res, next) {
 
-  let categories = [];
-   /*seo*/
-    let title = 'Rouse.One - О нас';
-    let description = 'Rouse.One - Интернет магазин экологичекий косметики';
-   let keywords = '';
+    let categories = [];
 
-  left_menu().then((c) => {
-    categories = c;
-    res.render('about', {
-      title: title
-      , description: description
-      , keywords: keywords
-      , categories: categories
+    left_menu().then((c) => {
+        categories = c;
+        return SeoModel.Get('');
+
+    }).then(seo => {
+        res.render('about', {
+            seo: seo
+            , categories: categories
+        });
     });
-  });
 
 });
 

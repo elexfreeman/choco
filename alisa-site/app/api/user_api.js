@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const UserModel = require('../models/user_model');
+const UserModel = require('../../models/user_model');
 
 
 router.post('/', function (req, res) {
@@ -13,11 +13,11 @@ router.post('/getUserInfo', (req, res, next) => {
     /*проверяем вх параментры*/
     if (req.body.apiKey !== undefined) {
         UserModel.getUserInfoByApiKey(req.body.apiKey).then(user => {
-            res.json({user: user})
-        }).catch(e => res.json({user: false}))
+            res.json({ user: user });
+        }).catch(e => res.json({ user: false }));
 
     } else {
-        res.json({user: false})
+        res.json({ user: false });
     }
 });
 
@@ -29,12 +29,12 @@ router.post('/update', (req, res, next) => {
         UserModel.getUserInfoByApiKey(req.body.apiKey).then(user => {
             UserModel.update(user.id, req.body).then(resp => {
                 return UserModel.getUserInfoByApiKey(req.body.apiKey);
-            }).then(user => res.json({user: user}));
+            }).then(user => res.json({ user: user }));
 
-        }).catch(e => res.json({user: false}))
+        }).catch(e => res.json({ user: false }));
 
     } else {
-        res.json({user: false})
+        res.json({ user: false });
     }
 });
 

@@ -5,22 +5,123 @@
     <div class="center-container-wrap-g">
         <div class="container grid-xl center-container">
             <div class="columns">
-                <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-3">
-                    <% include ../components/menu/menu_left %>
-                </div>
-                <div class="column col-xs-12 col-md-12 col-sm-12 col-lg-8 col-xl-8 col-9">
-                    <% include ../main_page/banner %>
-                    <% include ../main_page/offer %>
+                <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-1 col-xl-1 col-1"></div>
+                <div class="column col-xs-12 col-md-12 col-sm-12 col-lg-10 col-xl-10 col-10">
+                    <div class="main-h1">
+                        <h1>Авторский шоколад со всей России</h1>
+                    </div>
+
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column col-12">
+                                <div class="carousel main-page-slider">
+                                    <input type="radio" id="slide-1" name="carousel-radio" hidden=""
+                                           class="carousel-locator" checked="">
+                                    <input type="radio" id="slide-2" name="carousel-radio" hidden=""
+                                           class="carousel-locator">
+                                    <input type="radio" id="slide-3" name="carousel-radio" hidden=""
+                                           class="carousel-locator">
+                                    <input type="radio" id="slide-4" name="carousel-radio" hidden=""
+                                           class="carousel-locator">
+                                    <div class="carousel-container">
+                                        <figure class="carousel-item">
+                                            <label class="item-prev btn btn-action btn-lg" for="slide-4">
+                                                <i class="icon icon-arrow-left"></i>
+                                            </label>
+                                            <label class="item-next btn btn-action btn-lg" for="slide-2">
+                                                <i class="icon icon-arrow-right"></i>
+                                            </label>
+                                            <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg"
+                                                 class="img-responsive rounded" alt="macOS Yosemite Wallpaper">
+                                        </figure>
+                                        <figure class="carousel-item">
+                                            <label class="item-prev btn btn-action btn-lg" for="slide-1">
+                                                <i class="icon icon-arrow-left"></i></label>
+                                            <label class="item-next btn btn-action btn-lg" for="slide-3">
+                                                <i class="icon icon-arrow-right"></i>
+                                            </label>
+                                            <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg"
+                                                 class="img-responsive rounded" alt="macOS Yosemite Wallpaper">
+                                        </figure>
+                                        <figure class="carousel-item">
+                                            <label class="item-prev btn btn-action btn-lg" for="slide-2">
+                                                <i class="icon icon-arrow-left"></i>
+                                            </label>
+                                            <label class="item-next btn btn-action btn-lg" for="slide-4">
+                                                <i class="icon icon-arrow-right"></i>
+                                            </label>
+                                            <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg"
+                                                 class="img-responsive rounded" alt="macOS Yosemite Wallpaper">
+                                        </figure>
+                                        <figure class="carousel-item"><label class="item-prev btn btn-action btn-lg"
+                                                                             for="slide-3"><i
+                                                        class="icon icon-arrow-left"></i></label><label
+                                                    class="item-next btn btn-action btn-lg" for="slide-1"><i
+                                                        class="icon icon-arrow-right"></i></label>
+                                            <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg"
+                                                 class="img-responsive rounded" alt="macOS Yosemite Wallpaper">
+                                        </figure>
+                                    </div>
+                                    <div class="carousel-nav"><label class="nav-item text-hide c-hand"
+                                                                     for="slide-1">1</label><label
+                                                class="nav-item text-hide c-hand" for="slide-2">2</label><label
+                                                class="nav-item text-hide c-hand" for="slide-3">3</label><label
+                                                class="nav-item text-hide c-hand" for="slide-4">4</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container main-page-categories">
+                        <div class="columns">
+                            <% categories.forEach(function(c) { %>
+                            <div class="column col-4 col-sm-12">
+                                <div class="card">
+                                    <a href='/category/<%= c.url %>'>
+                                        <div class="card-image">
+                                            <img class="img-responsive"
+                                                 src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg"
+                                                 alt="OS X El Capitan"></div>
+                                        <div class="card-header">
+                                            <div class="card-title h5"><%= c.caption %></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <% }); %>
+                        </div>
+                    </div>
+
+
+                    <div class="columns offer">
+                        <div class="column col-lg-6 col-md-12 col-xs-12">
+                            <div class="offer-item">
+                                <div class="text-2">Специальное предложение</div>
+                                <div class="text-1">10% скидка</div>
+                                <div class="text-3">При покупке онлайн</div>
+                            </div>
+                        </div>
+                        <div class="column col-lg-6 col-md-12 col-xs-12">
+                            <div class="offer-item">
+                                <div class="text-1">Бесплатная доставка</div>
+                                <div class="text-2">при заказе от 1 000 руб</div>
+                                <div class="text-3">предложение распространяется на все товары</div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="base-head">Новые поступления</div>
-                    <% include ../components/products_new %>
+                    <div class="columns products"></div>
                 </div>
+                <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-1 col-xl-1 col-1"></div>
             </div>
         </div>
     </div>
 
-    <% include ../base/footer %>
-
 </div>
+
+<% include ../base/footer %>
+
+
 <script type="text/javascript" src="common.js" charset="utf-8"></script>
 <script type="text/javascript" src="category.js" charset="utf-8"></script>
 <% include ../base/bottom %>

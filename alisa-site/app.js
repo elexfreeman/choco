@@ -25,10 +25,12 @@ let category = require('./app/pages/category');
 let product = require('./app/pages/product');
 let about = require('./app/pages/about');
 
-let cart = require('./app/cart');
+let cart = require('./app/pages/cart');
 
-let login = require('./app/login/routes');
-let user = require('./app/user/routes');
+
+let user = require('./app/pages/user');
+let user_api = require('./app/api/user_api');
+let login_api = require('./app/api/login/routes');
 
 
 
@@ -68,8 +70,10 @@ app.use('/', index);
 app.use('/category/*', category);
 app.use('/cart', cart);
 
-app.use('/login', login);
+app.use('/login_api', login_api);
+
 app.use('/user', user);
+app.use('/user_api', user_api);
 
 app.use('/about', about);
 app.use('/admin', admin);

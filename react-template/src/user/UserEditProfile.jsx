@@ -103,20 +103,27 @@ class UserEditProfile extends Component {
 
                             <div className="columns">
                                 <div className="column col-3 col-sm-12">
-                                    {this.state.photo ? (
-                                        <img className='user-avatar'
-                                             src={this.state.photo}
-                                             alt="..."/>
+                                    <div className="avatar-photo-wraper">
 
-                                    ) : (
-                                        <img className='user-avatar'
-                                             src={rest_server + this.state.avatar}
-                                             alt="..."/>
-                                    )}
+                                        {this.state.photo ? (
+                                            <img className='user-avatar'
+                                                 src={this.state.photo}
+                                                 alt="..."/>
 
-                                    <input id="avatarPhoto" className="add-pictures__form-control"
-                                           onChange={this.onAddImages}
-                                           type='file'></input>
+                                        ) : (
+                                            <img className='user-avatar'
+                                                 src={rest_server + this.state.avatar}
+                                                 alt="..."/>
+                                        )}
+
+                                        <div className="bg-hover">
+                                            Изменить
+                                        </div>
+
+                                        <input id="avatarPhoto" className="add-pictures__form-control"
+                                               onChange={this.onAddImages}
+                                               type='file'></input>
+                                    </div>
                                 </div>
                                 <div className="column col-6 col-sm-12">
                                     <div className="form-horizontal">

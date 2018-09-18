@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+
 
   <link rel="shortcut icon" href="favicon/favicon.ico">
   <link rel="stylesheet" href="css/style.bundle.css">
@@ -13,36 +13,259 @@
 
 <body>
 
-
-  <div class="container">
-
-    <div class="login-form">
-
-      <div id="login-done" class="login-done hide">
-        <div>Здраствуйте
-          <div id="user-name"></div>
+  <header class="navbar">
+    <div class="container grid-xl">
+      <div class="columns">
+        <div class="column col-xs-2 col-sm-3 col-3">
+          <div class="logo"><a href="/"><span>Like</span>Chocko</a></div>
+        </div>
+        <div class="column col-xs-1 col-5">
+          <!-- <div class="input-group search">
+                    <input type="text" class="form-input input-lg"
+                                                       placeholder="Ваш поиск начинается здесь...">
+                    <button class="btn btn-primary input-group-btn btn-lg">
+                        <i class="icon icon-search"></i>
+                    </button>
+                </div>-->
+        </div>
+        <div class="column col-xs-9 col-4 text-right">
+          <span id="cart_button"><span>
+              <div>
+                <div class="modal "><a class="modal-overlay" aria-label="Close"></a>
+                  <div class="modal-container">
+                    <div class="modal-header"><a class="btn btn-clear float-right" aria-label="Close"></a>
+                      <div class="modal-title h5">Ваша корзина</div>
+                    </div>
+                    <div class="modal-body">
+                      <div class="content">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th>Товар</th>
+                              <th>Кол-во</th>
+                            </tr>
+                          </thead>
+                          <tbody></tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="modal-footer"><a href="/cart" class="btn">Перейти в корзину</a></div>
+                  </div>
+                </div>
+              </div><button class="btn-cart btn input-group-btn btn-lg badge" data-badge="0"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+            </span></span>
+          <div class="dropdown dropdown-right">
+            <div class="btn-group"><a href="#" class="btn dropdown-toggle btn-lg" tabindex="0"><i class="icon icon-menu"></i></a>
+              <ul class="menu">
+                <li class="menu-item"><a href="/user">
+                    <div>
+                      <div class="menu-icon"><i class="fa fa-user-o" aria-hidden="true"></i></div>
+                      <div class="menu-caption">Личный кабинет</div>
+                    </div>
+                  </a><a href="/card">
+                    <div>
+                      <div class="menu-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+                      <div class="menu-caption">Корзина</div>
+                    </div>
+                  </a><a href="#dropdowns">
+                    <div>
+                      <div class="menu-icon"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                      <div class="menu-caption">Мои желания</div>
+                    </div>
+                  </a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </header>
 
-      <div id="login-form">
-        <div class="login-form__title">Вход</div>
+  <div class="main-page">
+    <div class="center-container-wrap-g">
+      <div class="container grid-xl center-container">
+        <div class="columns">
+          <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-1 col-xl-1 col-1"></div>
+          <div class="column col-xs-12 col-md-12 col-sm-12 col-lg-10 col-xl-10 col-10">
+            <div class="main-h1">
+              <h1>Авторский шоколад со всей России</h1>
+            </div>
 
-        <div class="login-form__input-container">
-          <div class="input-group-from">
-            <img src="img/email-ico.png" />
-            <input id="login" placeholder="Логин" />
+            <div class="container">
+              <div class="columns">
+                <div class="column col-12">
 
+                  <div class="carousel main-page-slider">
+                    <input type="radio" id="slide-1" name="carousel-radio" hidden="" class="carousel-locator" checked="">
+                    <input type="radio" id="slide-2" name="carousel-radio" hidden="" class="carousel-locator">
+                    <input type="radio" id="slide-3" name="carousel-radio" hidden="" class="carousel-locator">
+                    <input type="radio" id="slide-4" name="carousel-radio" hidden="" class="carousel-locator">
+                    <div class="carousel-container">
+                      <figure class="carousel-item">
+                        <label class="item-prev btn btn-action btn-lg" for="slide-4">
+                          <i class="icon icon-arrow-left"></i>
+                        </label>
+                        <label class="item-next btn btn-action btn-lg" for="slide-2">
+                          <i class="icon icon-arrow-right"></i>
+                        </label>
+                        <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" class="img-responsive rounded" alt="macOS Yosemite Wallpaper">
+                      </figure>
+                      <figure class="carousel-item">
+                        <label class="item-prev btn btn-action btn-lg" for="slide-1">
+                          <i class="icon icon-arrow-left"></i></label>
+                        <label class="item-next btn btn-action btn-lg" for="slide-3">
+                          <i class="icon icon-arrow-right"></i>
+                        </label>
+                        <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" class="img-responsive rounded" alt="macOS Yosemite Wallpaper">
+                      </figure>
+                      <figure class="carousel-item">
+                        <label class="item-prev btn btn-action btn-lg" for="slide-2">
+                          <i class="icon icon-arrow-left"></i>
+                        </label>
+                        <label class="item-next btn btn-action btn-lg" for="slide-4">
+                          <i class="icon icon-arrow-right"></i>
+                        </label>
+                        <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" class="img-responsive rounded" alt="macOS Yosemite Wallpaper">
+                      </figure>
+                      <figure class="carousel-item"><label class="item-prev btn btn-action btn-lg" for="slide-3"><i class="icon icon-arrow-left"></i></label><label class="item-next btn btn-action btn-lg" for="slide-1"><i class="icon icon-arrow-right"></i></label>
+                        <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" class="img-responsive rounded" alt="macOS Yosemite Wallpaper">
+                      </figure>
+                    </div>
+                    <div class="carousel-nav"><label class="nav-item text-hide c-hand" for="slide-1">1</label><label class="nav-item text-hide c-hand" for="slide-2">2</label><label class="nav-item text-hide c-hand" for="slide-3">3</label><label class="nav-item text-hide c-hand" for="slide-4">4</label></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container main-page-categories">
+              <div class="columns">
+                <div class="column col-4 col-sm-12">
+                  <div class="card">
+                    <a href="#">
+                      <div class="card-image">
+                        <img class="img-responsive" src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" alt="OS X El Capitan"></div>
+                      <div class="card-header">
+                        <div class="card-title h5">Microsoft</div>
+                        <div class="card-subtitle text-gray">Software and hardware</div>
+                      </div>
+                      <div class="card-body">Empower every person and every organization on the planet to achieve more.
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="column col-4 col-sm-12">
+                  <div class="card">
+                    <a href="#">
+                      <div class="card-image">
+                        <img class="img-responsive" src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" alt="OS X El Capitan"></div>
+                      <div class="card-header">
+                        <div class="card-title h5">Microsoft</div>
+                        <div class="card-subtitle text-gray">Software and hardware</div>
+                      </div>
+                      <div class="card-body">Empower every person and every organization on the planet to achieve more.
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="column col-4 col-sm-12">
+                  <div class="card">
+                    <a href="#">
+                      <div class="card-image">
+                        <img class="img-responsive" src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" alt="OS X El Capitan"></div>
+                      <div class="card-header">
+                        <div class="card-title h5">Microsoft</div>
+                        <div class="card-subtitle text-gray">Software and hardware</div>
+                      </div>
+                      <div class="card-body">Empower every person and every organization on the planet to achieve more.
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="column col-4 col-sm-12">
+                  <div class="card">
+                    <a href="#">
+                      <div class="card-image">
+                        <img class="img-responsive" src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" alt="OS X El Capitan"></div>
+                      <div class="card-header">
+                        <div class="card-title h5">Microsoft</div>
+                        <div class="card-subtitle text-gray">Software and hardware</div>
+                      </div>
+                      <div class="card-body">Empower every person and every organization on the planet to achieve more.
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="columns offer">
+              <div class="column col-lg-6 col-md-12 col-xs-12">
+                <div class="offer-item">
+                  <div class="text-2">Специальное предложение</div>
+                  <div class="text-1">10% скидка</div>
+                  <div class="text-3">При покупке онлайн</div>
+                </div>
+              </div>
+              <div class="column col-lg-6 col-md-12 col-xs-12">
+                <div class="offer-item">
+                  <div class="text-1">Бесплатная доставка</div>
+                  <div class="text-2">при заказе от 1 000 руб</div>
+                  <div class="text-3">предложение распространяется на все товары</div>
+                </div>
+              </div>
+            </div>
+            <div class="base-head">Новые поступления</div>
+            <div class="columns products"></div>
           </div>
-          <div class="input-group-from">
-            <img src="img/pass-ico.png" />
-            <input id="pass" type="password" placeholder="Пароль" />
-          </div>
+          <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-1 col-xl-1 col-1"></div>
         </div>
-        <div id="error-msg" class="error hide">
-          Ошибка ввода логина или пароля!
-        </div>
-        <button id="login-button" class="login-form__login-button">Войти</button>
       </div>
+    </div>
+
+  </div>
+
+  <div class="center-container-wrap-g">
+    <div class="container grid-xl center-container">
+
+      <div class="columns">
+        <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-1 col-xl-1 col-1"></div>
+        <div class="column col-xs-12 col-md-12 col-sm-12 col-lg-10 col-xl-10 col-10">
+          <div class="footer columns">
+
+            <div class="column col-3 col-md-12 col-xs-12 col-sm-12">
+              <div class="head">Информация</div>
+              <div class="footer-link"><a href="#">О нас</a></div>
+              <div class="footer-link"><a href="#">Клиентский сервис</a></div>
+              <div class="footer-link"><a href="#">Политика использования</a></div>
+              <div class="footer-link"><a href="#">Карта сайта</a></div>
+              <div class="footer-link"><a href="#">Заказы и возврат</a></div>
+              <div class="footer-link"><a href="#">Свяжтесь с нами</a></div>
+            </div>
+            <div class="column col-3 col-md-12 col-xs-12 col-sm-12">
+              <div class="head">Почему покупают у нас</div>
+              <div class="footer-link"><a href="#">Доставка и возврат</a></div>
+              <div class="footer-link"><a href="#">Безопасность покупки</a></div>
+              <div class="footer-link"><a href="#">Международная доставка</a></div>
+              <div class="footer-link"><a href="#">Групповые покупки</a></div>
+            </div>
+            <div class="column col-md-12 col-3 col-xs-12 col-sm-12">
+              <div class="head">Личный кабинет</div>
+              <div class="footer-link"><a href="#">Вход</a></div>
+              <div class="footer-link"><a href="#">Корзина</a></div>
+              <div class="footer-link"><a href="#">Мои желания</a></div>
+              <div class="footer-link"><a href="#">Отслеживание доставки</a></div>
+              <div class="footer-link"><a href="#">Помощь</a></div>
+            </div>
+            <div class="column col-md-12 col-3 col-xs-12 col-sm-12">
+              <div class="head">Новости</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-1 col-xl-1 col-1"></div>
+      </div>
+
+
     </div>
   </div>
 

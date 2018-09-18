@@ -1,13 +1,12 @@
-let express = require('express');
-let router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-let left_menu = require('../../models/left_menu');
-let Products = require('../../models/products');
-
+const left_menu = require('../../models/left_menu');
+const Products = require('../../models/products');
+const SeoModel = require('../models/seo_model');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-
 
     let Url = req.baseUrl.replace('\\', '');
     Url = Url.replace('/', '');
@@ -20,6 +19,7 @@ router.get('/', function (req, res, next) {
     /*акции*/
     let discont = [];
     let manufacturer = [];
+    let seo_call = {};
 
     left_menu().then((c) => {
         categories = c;
@@ -33,23 +33,29 @@ router.get('/', function (req, res, next) {
         return Products.getDiscont(5);
     }).then(resp => {
         discont = resp;
-
+        return SeoModel.Get('product');
+    }).then(seo => {
+        seo_call = seo;
         return Products.getByUrl(Url);
-
     }).then(product => {
-        /*seo*/
-        let title = 'Rouse.One - ' + product.caption;
-        let description = 'Rouse.One - Интернет магазин экологичекий косметики';
-        let keywords = '';
-
 
         if (typeof product.description === 'string')
             product.description = product.description.replace(/\r\n|\r|\n/g, "<br />");
 
         res.render('product_page/index', {
-            title: title
-            , description: description
-            , keywords: keywords
+            seo_call: seo_call
+            , product: product
+            , categories: categories
+            , products_new: products_new
+            , products_popular: products_popular
+            , discont: discont
+            , Url: Url
+            , manufacturer: manufacturer
+        });
+
+    }).catch(e => {
+        res.render('product_page/index', {
+            seo_call: seo_call
             , product: product
             , categories: categories
             , products_new: products_new

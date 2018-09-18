@@ -107,7 +107,7 @@ module.exports = {
       filename: 'styles.css',
       allChunks: true
        /*закментить при билде*/
-      ,disable: true
+      //,disable: true
     }),
       new webpack.optimize.CommonsChunkPlugin({
        name: "common"

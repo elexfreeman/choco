@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link rel="shortcut icon" href="favicon/favicon.ico">
+  <link rel="stylesheet" href="css/style.bundle.css">
+  <title>Заголовок | Проект</title>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="container grid-xl">
+      <div class="columns">
+        <div class="column col-xs-2 col-sm-3 col-3">
+          <div class="logo"><a href="/"><span>Like</span>Chocko</a></div>
+        </div>
+        <div class="column col-xs-1 col-5">
+          <!-- <div class="input-group search">
+                    <input type="text" class="form-input input-lg"
+                                                       placeholder="Ваш поиск начинается здесь...">
+                    <button class="btn btn-primary input-group-btn btn-lg">
+                        <i class="icon icon-search"></i>
+                    </button>
+                </div>-->
+        </div>
+        <div class="column col-xs-9 col-4 text-right">
+          <span id="cart_button"><span>
+              <div>
+                <div class="modal "><a class="modal-overlay" aria-label="Close"></a>
+                  <div class="modal-container">
+                    <div class="modal-header"><a class="btn btn-clear float-right" aria-label="Close"></a>
+                      <div class="modal-title h5">Ваша корзина</div>
+                    </div>
+                    <div class="modal-body">
+                      <div class="content">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th>Товар</th>
+                              <th>Кол-во</th>
+                            </tr>
+                          </thead>
+                          <tbody></tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="modal-footer"><a href="/cart" class="btn">Перейти в корзину</a></div>
+                  </div>
+                </div>
+              </div><button class="btn-cart btn input-group-btn btn-lg badge" data-badge="0"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+            </span></span>
+          <div class="dropdown dropdown-right">
+            <div class="btn-group"><a href="#" class="btn dropdown-toggle btn-lg" tabindex="0"><i class="icon icon-menu"></i></a>
+              <ul class="menu">
+                <li class="menu-item"><a href="/user">
+                    <div>
+                      <div class="menu-icon"><i class="fa fa-user-o" aria-hidden="true"></i></div>
+                      <div class="menu-caption">Личный кабинет</div>
+                    </div>
+                  </a><a href="/card">
+                    <div>
+                      <div class="menu-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+                      <div class="menu-caption">Корзина</div>
+                    </div>
+                  </a><a href="#dropdowns">
+                    <div>
+                      <div class="menu-icon"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                      <div class="menu-caption">Мои желания</div>
+                    </div>
+                  </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="product-page">
+    <div class="center-container-wrap-g">
+      <div class="container grid-xl center-container">
+        <div class="columns">
+          <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-3">
+            <div class="menu-left">
+              <div class="head">Категории</div>
+              <div class="menu">
+                <div class="item"><a href="/category/1-shokolad-dlya-sebya">Шоколад для себя</a></div>
+                <div class="item"><a href="/category/13-chernyj-shokolad-09-05">Черный шоколад</a></div>
+                <div class="item"><a href="/category/14-molochnyj-shkolad-09-05">Молочный шоколад</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="column col-xs-12 col-md-12 col-sm-12 col-lg-8 col-xl-8 col-9">
+            <div class="columns">
+              <div class="product-img column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-4">
+
+                <div id="product_img">
+                  <div class="columns">
+                    <div class="column col-12">
+                      <a href="#product_modal">
+                        <div class="parallax">
+                          <div class="parallax-top-left" tabindex="1"></div>
+                          <div class="parallax-top-right" tabindex="2"></div>
+                          <div class="parallax-bottom-left" tabindex="3"></div>
+                          <div class="parallax-bottom-right" tabindex="4"></div>
+                          <div class="parallax-content">
+                            <div class="parallax-front">
+                              <!--  <h2>tvOS parallax demo</h2>-->
+                            </div>
+                            <div class="parallax-back">
+                              <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" class="img-responsive rounded">
+                            </div>
+                          </div>
+                        </div>
+
+                      </a>
+                    </div>
+                    <div class="column col-4">
+                      <img class="img-responsive" src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg">
+                    </div>
+                    <div class="column col-4">
+                      <img class="img-responsive" src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg">
+                    </div>
+                    <div class="column col-4">
+                      <img class="img-responsive" src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg">
+                    </div>
+                  </div>
+
+                  <div class="modal modal-lg" id="product_modal">
+                    <a class="modal-overlay" href="#modals-sizes" aria-label="Close"></a>
+                    <div class="modal-container" role="document">
+                      <div class="modal-header">
+                        <a class="btn btn-clear float-right" href="#modals-sizes" aria-label="Close"></a>
+                        <div class="modal-title h5">Вкусненький шоколадик</div>
+                      </div>
+                      <div class="modal-body">
+                        <div class="content">
+
+                          <div class="carousel product-slider">
+                            <input type="radio" id="slide-1" name="carousel-radio" hidden class="carousel-locator" checked="">
+                            <input type="radio" id="slide-2" name="carousel-radio" hidden class="carousel-locator">
+                            <input type="radio" id="slide-3" name="carousel-radio" hidden class="carousel-locator">
+                            <input type="radio" id="slide-4" name="carousel-radio" hidden class="carousel-locator">
+                            <div class="carousel-container">
+                              <figure class="carousel-item">
+                                <label class="item-prev btn btn-action btn-lg" for="slide-4">
+                                  <i class="icon icon-arrow-left"></i>
+                                </label>
+                                <label class="item-next btn btn-action btn-lg" for="slide-2">
+                                  <i class="icon icon-arrow-right"></i>
+                                </label>
+                                <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" class="img-responsive rounded" alt="macOS Yosemite Wallpaper">
+                              </figure>
+                              <figure class="carousel-item">
+                                <label class="item-prev btn btn-action btn-lg" for="slide-1">
+                                  <i class="icon icon-arrow-left"></i>
+                                </label>
+                                <label class="item-next btn btn-action btn-lg" for="slide-3">
+                                  <i class="icon icon-arrow-right"></i>
+                                </label>
+                                <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" class="img-responsive rounded" alt="macOS Yosemite Wallpaper">
+                              </figure>
+                              <figure class="carousel-item">
+                                <label class="item-prev btn btn-action btn-lg" for="slide-2">
+                                  <i class="icon icon-arrow-left"></i>
+                                </label>
+                                <label class="item-next btn btn-action btn-lg" for="slide-4">
+                                  <i class="icon icon-arrow-right"></i>
+                                </label>
+                                <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" class="img-responsive rounded" alt="macOS Yosemite Wallpaper">
+                              </figure>
+                              <figure class="carousel-item">
+                                <label class="item-prev btn btn-action btn-lg" for="slide-3">
+                                  <i class="icon icon-arrow-left"></i>
+                                </label>
+                                <label class="item-next btn btn-action btn-lg" for="slide-1">
+                                  <i class="icon icon-arrow-right"></i>
+                                </label>
+                                <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" class="img-responsive rounded" alt="macOS Yosemite Wallpaper">
+                              </figure>
+                            </div>
+                            <div class="carousel-nav">
+                              <label class="nav-item text-hide c-hand" for="slide-1">1</label>
+                              <label class="nav-item text-hide c-hand" for="slide-2">2</label>
+                              <label class="nav-item text-hide c-hand" for="slide-3">3</label>
+                              <label class="nav-item text-hide c-hand" for="slide-4">4</label></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <a class="btn btn-link btn-lg" href="#modals-sizes">Закрыть</a>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+
+
+              </div>
+              <div class="product-info column col-xs-12 col-sm-12 col-lg-8 col-xl-8 col-8">
+                <div class="info">
+                  <h1 class="caption">Вкусненький шоколадик</h1>
+                  <div class="availability">Доступность:<span>На складе</span></div>
+                  <hr>
+                  <div class="only_left">Осталось:<span>100 шт.</span></div>
+                  <div class="price">3333 руб.</div>
+                  <div class="description">Tesr</div>
+                  <div class="product-order" id="product_order" product_id="1" price="3333">
+                    <div class="product-order">
+                      <div class="price">Итого: 3333 руб.</div>
+                      <div class="divider"></div>
+                      <div class="columns">
+                        <div class="form-horizontal column col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 col-6">
+                          <div class="form-group">
+                            <div class="col-4 col-xs-6 col-md-6 col-lg-6 col-sm-12"><label class="form-label">Кол-во:</label></div>
+                            <div class="col-4 col-xs-6 col-md-4 col-lg-6 col-sm-12"><input type="number" value="1" class="form-input"></div>
+                          </div>
+                        </div>
+                        <div class="to_cart column col-xs-12 col-sm-12 col-lg-6 col-xl-6 col-6">
+                          <button class="btn btn-primary  btn-lg"><i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp;
+                            В корзину
+                          </button>
+                        </div>
+                      </div>
+                      <div class="divider"></div>
+                      <div class="modal modal-sm ">
+                        <div class="modal-container">
+                          <div class="modal-header">
+                            <div class="modal-title h5">Готово</div>
+                          </div>
+                          <div class="modal-body">
+                            <div class="content">Товар добавлен в корзину</div>
+                          </div>
+                          <div class="modal-footer"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="details column col-xs-12">
+                <div class="base-head">Детали</div>
+                <div>Tesr</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="center-container-wrap-g">
+    <div class="container grid-xl center-container">
+
+      <div class="columns">
+        <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-1 col-xl-1 col-1"></div>
+        <div class="column col-xs-12 col-md-12 col-sm-12 col-lg-10 col-xl-10 col-10">
+          <div class="footer columns">
+
+            <div class="column col-3 col-md-12 col-xs-12 col-sm-12">
+              <div class="head">Информация</div>
+              <div class="footer-link"><a href="#">О нас</a></div>
+              <div class="footer-link"><a href="#">Клиентский сервис</a></div>
+              <div class="footer-link"><a href="#">Политика использования</a></div>
+              <div class="footer-link"><a href="#">Карта сайта</a></div>
+              <div class="footer-link"><a href="#">Заказы и возврат</a></div>
+              <div class="footer-link"><a href="#">Свяжтесь с нами</a></div>
+            </div>
+            <div class="column col-3 col-md-12 col-xs-12 col-sm-12">
+              <div class="head">Почему покупают у нас</div>
+              <div class="footer-link"><a href="#">Доставка и возврат</a></div>
+              <div class="footer-link"><a href="#">Безопасность покупки</a></div>
+              <div class="footer-link"><a href="#">Международная доставка</a></div>
+              <div class="footer-link"><a href="#">Групповые покупки</a></div>
+            </div>
+            <div class="column col-md-12 col-3 col-xs-12 col-sm-12">
+              <div class="head">Личный кабинет</div>
+              <div class="footer-link"><a href="#">Вход</a></div>
+              <div class="footer-link"><a href="#">Корзина</a></div>
+              <div class="footer-link"><a href="#">Мои желания</a></div>
+              <div class="footer-link"><a href="#">Отслеживание доставки</a></div>
+              <div class="footer-link"><a href="#">Помощь</a></div>
+            </div>
+            <div class="column col-md-12 col-3 col-xs-12 col-sm-12">
+              <div class="head">Новости</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-1 col-xl-1 col-1"></div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <script src="js/bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link rel="shortcut icon" href="favicon/favicon.ico">
+  <link rel="stylesheet" href="css/style.bundle.css">
+  <title>Заголовок | Проект</title>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="container grid-xl">
+      <div class="columns">
+        <div class="column col-xs-2 col-sm-3 col-3">
+          <div class="logo"><a href="/"><span>Like</span>Chocko</a></div>
+        </div>
+        <div class="column col-xs-1 col-5">
+          <!-- <div class="input-group search">
+                    <input type="text" class="form-input input-lg"
+                                                       placeholder="Ваш поиск начинается здесь...">
+                    <button class="btn btn-primary input-group-btn btn-lg">
+                        <i class="icon icon-search"></i>
+                    </button>
+                </div>-->
+        </div>
+        <div class="column col-xs-9 col-4 text-right">
+          <span id="cart_button"><span>
+              <div>
+                <div class="modal "><a class="modal-overlay" aria-label="Close"></a>
+                  <div class="modal-container">
+                    <div class="modal-header"><a class="btn btn-clear float-right" aria-label="Close"></a>
+                      <div class="modal-title h5">Ваша корзина</div>
+                    </div>
+                    <div class="modal-body">
+                      <div class="content">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th>Товар</th>
+                              <th>Кол-во</th>
+                            </tr>
+                          </thead>
+                          <tbody></tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="modal-footer"><a href="/cart" class="btn">Перейти в корзину</a></div>
+                  </div>
+                </div>
+              </div><button class="btn-cart btn input-group-btn btn-lg badge" data-badge="0"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+            </span></span>
+          <div class="dropdown dropdown-right">
+            <div class="btn-group"><a href="#" class="btn dropdown-toggle btn-lg" tabindex="0"><i class="icon icon-menu"></i></a>
+              <ul class="menu">
+                <li class="menu-item"><a href="/user">
+                    <div>
+                      <div class="menu-icon"><i class="fa fa-user-o" aria-hidden="true"></i></div>
+                      <div class="menu-caption">Личный кабинет</div>
+                    </div>
+                  </a><a href="/card">
+                    <div>
+                      <div class="menu-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+                      <div class="menu-caption">Корзина</div>
+                    </div>
+                  </a><a href="#dropdowns">
+                    <div>
+                      <div class="menu-icon"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                      <div class="menu-caption">Мои желания</div>
+                    </div>
+                  </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="user">
+    <div class="center-container-wrap-g">
+      <div class="container grid-xl center-container">
+        <div class="columns">
+          <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-3">
+            <div class="menu-left">
+              <div class="head">Личный кабинет</div>
+              <div class="menu">
+                <div class="item"><a href="/">На главную</a></div>
+                <div class="item"><a class="active" aria-current="true" href="/">Заказы</a></div>
+                <div class="item"><a aria-current="false" href="/cart">Корзина</a></div>
+                <div class="item"><a>Выход</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="user-dashboard column col-xs-12 col-md-12 col-sm-12 col-lg-8 col-xl-8 col-9">
+            <div class="user-head">
+              <div class="container">
+                <div class="columns">
+                  <div class="column col-3 col-sm-12">
+                    <img class="user-avatar" src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/ColonelJohnSheppard.jpg/250px-ColonelJohnSheppard.jpg" alt="...">
+                  </div>
+                  <div class="column col-6 col-sm-12">
+                    <h4>John Shepard</h4>
+                    <p>24234</p>
+                    <p></p>
+                  </div>
+                  <div class="column col-3 col-sm-12 text-right"><a class="btn btn-primary btn-lg" aria-current="false" href="/edit_profile"><i class="icon icon-edit"></i></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="user-head">
+              <div class="container">
+                <div class="columns">
+                  <div class="column col-3 col-sm-12">
+                    <div class="avatar-photo-wraper">
+
+                      <img class="user-avatar" src="http://localhost:3001//images/uploadimg/7bJ0Hic504344554.jpeg" alt="...">
+                      <div class="bg-hover">
+                        Изменить
+                      </div>
+                      <input type="file" id="avatarPhoto" class="add-pictures__form-control">
+                    </div>
+                  </div>
+                  <div class="column col-6 col-sm-12">
+                    <div class="form-horizontal">
+                      <div class="form-group">
+                        <div class="col-3 col-sm-12"><label class="form-label">Фамилия</label></div>
+                        <div class="col-9 col-sm-12"><input type="text" name="surname" id="u_surname" class="form-input" placeholder=""></div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-3 col-sm-12"><label class="form-label">Имя</label></div>
+                        <div class="col-9 col-sm-12"><input type="text" name="name" id="u_name" class="form-input" placeholder=""></div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-3 col-sm-12"><label class="form-label">Отчество</label></div>
+                        <div class="col-9 col-sm-12"><input type="text" name="patronymic" id="u_patronymic" class="form-input" placeholder=""></div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-3 col-sm-12"><label class="form-label">Email</label></div>
+                        <div class="col-9 col-sm-12"><input type="text" name="email" id="u_email" class="form-input" placeholder=""></div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-3 col-sm-12"></div>
+                        <div class="col-9 col-sm-12 text-right">
+                          <button class="btn btn-primary">Сохранить</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column col-3 col-sm-12 text-right"><a class="btn btn-primary btn-lg active" aria-current="true" href="/"><i class="icon icon-cross"></i></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="user-orders">
+              <div class="base-head">Мои заказы</div>
+              <div class="container orders-container"><a href="#">
+                  <div class="columns">
+                    <div class="column col-1 col-md-12">№ <b>9928</b><br>от 02.01.2018</div>
+                    <div class="column col-5 col-md-12">
+                      <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img src="/img/chokok1.jpg" alt="YZ"></figure>
+                      <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img src="/img/chokok1.jpg" alt="YZ"></figure>
+                      <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img src="/img/chokok1.jpg" alt="YZ"></figure>
+                      <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img src="/img/chokok1.jpg" alt="YZ"></figure>
+                    </div>
+                    <div class="column col-2 col-md-12"><span class="label label-primary">Ожидает оплаты</span></div>
+                    <div class="column col-4 col-md-12 text-right summa">12 000 руб <i class="icon icon-arrow-right"></i></div>
+                  </div>
+                </a>
+                <hr>
+                <a href="#">
+                  <div class="columns">
+                    <div class="column col-1 col-md-12">№ 9928<br>от 02.01.2018</div>
+                    <div class="column col-5 col-md-12">
+                      <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img src="/img/chokok1.jpg" alt="YZ"></figure>
+                      <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img src="/img/chokok1.jpg" alt="YZ"></figure>
+                      <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img src="/img/chokok1.jpg" alt="YZ"></figure>
+                      <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img src="/img/chokok1.jpg" alt="YZ"></figure>
+                    </div>
+                    <div class="column col-2 col-md-12"><span class="label label-primary">Ожидает оплаты</span></div>
+                    <div class="column col-4 col-md-12 text-right summa">12 000 руб <i class="icon icon-arrow-right"></i></div>
+                  </div>
+                </a>
+                <hr>
+                <a href="#">
+                  <div class="columns">
+                    <div class="column col-1 col-md-12">№ 9928<br>от 02.01.2018</div>
+                    <div class="column col-5 col-md-12">
+                      <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img src="/img/chokok1.jpg" alt="YZ"></figure>
+                      <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img src="/img/chokok1.jpg" alt="YZ"></figure>
+                      <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img src="/img/chokok1.jpg" alt="YZ"></figure>
+                      <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img src="/img/chokok1.jpg" alt="YZ"></figure>
+                    </div>
+                    <div class="column col-2 col-md-12"><span class="label label-primary">Ожидает оплаты</span></div>
+                    <div class="column col-4 col-md-12 text-right summa">12 000 руб <i class="icon icon-arrow-right"></i></div>
+                  </div>
+                </a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="center-container-wrap-g">
+    <div class="container grid-xl center-container">
+
+      <div class="columns">
+        <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-1 col-xl-1 col-1"></div>
+        <div class="column col-xs-12 col-md-12 col-sm-12 col-lg-10 col-xl-10 col-10">
+          <div class="footer columns">
+
+            <div class="column col-3 col-md-12 col-xs-12 col-sm-12">
+              <div class="head">Информация</div>
+              <div class="footer-link"><a href="#">О нас</a></div>
+              <div class="footer-link"><a href="#">Клиентский сервис</a></div>
+              <div class="footer-link"><a href="#">Политика использования</a></div>
+              <div class="footer-link"><a href="#">Карта сайта</a></div>
+              <div class="footer-link"><a href="#">Заказы и возврат</a></div>
+              <div class="footer-link"><a href="#">Свяжтесь с нами</a></div>
+            </div>
+            <div class="column col-3 col-md-12 col-xs-12 col-sm-12">
+              <div class="head">Почему покупают у нас</div>
+              <div class="footer-link"><a href="#">Доставка и возврат</a></div>
+              <div class="footer-link"><a href="#">Безопасность покупки</a></div>
+              <div class="footer-link"><a href="#">Международная доставка</a></div>
+              <div class="footer-link"><a href="#">Групповые покупки</a></div>
+            </div>
+            <div class="column col-md-12 col-3 col-xs-12 col-sm-12">
+              <div class="head">Личный кабинет</div>
+              <div class="footer-link"><a href="#">Вход</a></div>
+              <div class="footer-link"><a href="#">Корзина</a></div>
+              <div class="footer-link"><a href="#">Мои желания</a></div>
+              <div class="footer-link"><a href="#">Отслеживание доставки</a></div>
+              <div class="footer-link"><a href="#">Помощь</a></div>
+            </div>
+            <div class="column col-md-12 col-3 col-xs-12 col-sm-12">
+              <div class="head">Новости</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-1 col-xl-1 col-1"></div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <script src="js/bundle.js"></script>
+</body>
+
+</html>
