@@ -1,0 +1,38 @@
+
+.user-head {
+  background-color: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.user {
+  .user-avatar {
+    width: 100%;
+  }
+
+  .breadcrumb {
+    margin: 0;
+  }
+
+  .cart-component {
+    margin-top: 1rem;
+  }
+
+  .user-orders {
+    figure {
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .orders-container {
+      background-color: #fff;
+      padding: 1rem;
+      .summa {
+        font-size: 2rem;
+      }
+      .columns {
+        align-items: center;
+      }
+    }
+  }
+}

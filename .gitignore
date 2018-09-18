@@ -1,5 +1,6 @@
 /node_modules
 /alisa-admin/node_modules
+/site-html/node_modules
 /alisa-site/node_modules
 /alisa-site/public/images
 /react-template/node_modules
@@ -7,3 +8,4 @@
 /alisa-site/bin/www
 alisa-site/bin/www
 alisa-site/bin/www
+/alisa-admin/.idea

@@ -1,0 +1,44 @@
+
+
+header{
+  padding:20px;
+  border-bottom:1px solid #ddd;
+  .logo{
+    font-size:1.5rem;
+    span{
+      color:$primary-color;
+    }
+  }
+  .search{
+    button{
+      padding-left:2rem !important;
+      padding-right:2rem !important;
+    }
+  }
+  .btn-cart {
+    margin-right:2rem;
+    margin-top:-5px;
+  }
+  .menu{
+    width: 300px;
+    .menu-item {
+      a{
+        overflow: auto;
+        .menu-icon{
+          padding-top:1rem;
+          padding-bottom:1rem;
+          float:left;
+          width:2rem;
+        }
+        .menu-caption{
+          padding-top:1rem;
+          padding-bottom:1rem;
+          min-width:10rem;
+          float:left;
+
+        }
+      }
+    }
+
+  }
+}

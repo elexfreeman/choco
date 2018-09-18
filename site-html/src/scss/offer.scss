@@ -1,0 +1,45 @@
+.offer {
+  padding-bottom: 2rem;
+  margin-top: 1rem;
+  .offer-item {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+
+    .text-1 {
+      font-size: 2rem;
+      line-height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 5rem;
+    }
+
+    .text-2 {
+      font-size: 1rem;
+      line-height: 1rem;
+    }
+
+    .text-1 > .text-2 {
+      padding-top: 1rem;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .offer {
+    .offer-item {
+      height: 14rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .offer {
+    .offer-item {
+      margin-bottom: 1rem
+    }
+  }
+}

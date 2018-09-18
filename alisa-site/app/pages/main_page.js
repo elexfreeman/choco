@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let Categories = require('../../models/categories');
+
 let Products = require('../../models/products');
 let left_menu = require('../../models/left_menu');
 

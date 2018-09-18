@@ -1,0 +1,76 @@
+<% var data = {
+title: "Заголовок | Проект",
+author: "John"
+}; %>
+<%= _.template(require('./../includes/header.html'))(data) %>
+<div class="product-page">
+    <div class="center-container-wrap-g">
+        <div class="container grid-xl center-container">
+            <div class="columns">
+                <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-3">
+                    <%= _.template(require('./../includes/left_menu.html'))(data) %>
+                </div>
+                <div class="column col-xs-12 col-md-12 col-sm-12 col-lg-8 col-xl-8 col-9">
+                    <div class="columns">
+                        <div class="product-img column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-4">
+
+                            <%= _.template(require('./../includes/product_page_img.html'))(data) %>
+                        </div>
+                        <div class="product-info column col-xs-12 col-sm-12 col-lg-8 col-xl-8 col-8">
+                            <div class="info">
+                                <h1 class="caption">Вкусненький шоколадик</h1>
+                                <div class="availability">Доступность:<span>На складе</span></div>
+                                <hr>
+                                <div class="only_left">Осталось:<span>100 шт.</span></div>
+                                <div class="price">3333 руб.</div>
+                                <div class="description">Tesr</div>
+                                <div class="product-order" id="product_order" product_id="1" price="3333">
+                                    <div class="product-order">
+                                        <div class="price">Итого: 3333 руб.</div>
+                                        <div class="divider"></div>
+                                        <div class="columns">
+                                            <div class="form-horizontal column col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 col-6">
+                                                <div class="form-group">
+                                                    <div class="col-4 col-xs-6 col-md-6 col-lg-6 col-sm-12"><label
+                                                            class="form-label">Кол-во:</label></div>
+                                                    <div class="col-4 col-xs-6 col-md-4 col-lg-6 col-sm-12"><input
+                                                            type="number" value="1" class="form-input"></div>
+                                                </div>
+                                            </div>
+                                            <div class="to_cart column col-xs-12 col-sm-12 col-lg-6 col-xl-6 col-6">
+                                                <button class="btn btn-primary  btn-lg"><i class="fa fa-cart-plus"
+                                                                                           aria-hidden="true"></i>&nbsp;
+                                                    В корзину
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="divider"></div>
+                                        <div class="modal modal-sm ">
+                                            <div class="modal-container">
+                                                <div class="modal-header">
+                                                    <div class="modal-title h5">Готово</div>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="content">Товар добавлен в корзину</div>
+                                                </div>
+                                                <div class="modal-footer"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details column col-xs-12">
+                            <div class="base-head">Детали</div>
+                            <div>Tesr</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= _.template(require('./../includes/footer_menu.html'))(data) %>
+
+<%= _.template(require('./../includes/footer.html'))(data) %>

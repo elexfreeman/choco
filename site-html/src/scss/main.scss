@@ -1,0 +1,89 @@
+$primary-color: #927355;
+$dark-color: #99a4ab;
+$gray-bg: #f5f6f7;
+$gray-color: #99a4ab;
+$primary-bg: #e2d5c9;
+$border-gray: #ddd;
+
+$btn-hover: #e2d5c9;
+
+@mixin transition($transition...) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+@mixin transition-property($property...) {
+  -moz-transition-property: $property;
+  -o-transition-property: $property;
+  -webkit-transition-property: $property;
+  transition-property: $property;
+}
+@mixin transition-duration($duration...) {
+  -moz-transition-property: $duration;
+  -o-transition-property: $duration;
+  -webkit-transition-property: $duration;
+  transition-property: $duration;
+}
+@mixin transition-timing-function($timing...) {
+  -moz-transition-timing-function: $timing;
+  -o-transition-timing-function: $timing;
+  -webkit-transition-timing-function: $timing;
+  transition-timing-function: $timing;
+}
+@mixin transition-delay($delay...) {
+  -moz-transition-delay: $delay;
+  -o-transition-delay: $delay;
+  -webkit-transition-delay: $delay;
+  transition-delay: $delay;
+}
+@import '../../node_modules/spectre.css/src/spectre.scss';
+@import '../../node_modules/spectre.css/src/spectre-exp.scss';
+@import '../../node_modules/spectre.css/src/spectre-icons.scss';
+@import './header.scss';
+@import './menu-left.scss';
+@import './base.scss';
+@import './special-product.scss';
+@import './offer.scss';
+@import './products.scss';
+@import './blog.scss';
+@import './footer.scss';
+@import './bread.scss';
+@import './cart.scss';
+@import './manufacturer.scss';
+@import './categories.scss';
+@import './login.scss';
+@import './user.scss';
+@import './delivery.scss';
+@import './user-register.scss';
+@import './main-page.scss';
+@import './main-page-slider.scss';
+@import './main-page-categories.scss';
+@import './product-page.scss';
+$fa-font-path: "../../node_modules/font-awesome/fonts";
+@import '../../node_modules/font-awesome/scss/font-awesome.scss';
+
+.center-container-wrap-g {
+  background-color: $gray-bg;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  min-height: 70vh;
+
+  .center-container {
+    margin: 0 auto;
+  }
+}
+
+.center-container-wrap-w {
+  background-color: #fff;
+  padding-bottom: 2rem;
+  min-height: 70vh;
+  overflow: hidden;
+  box-shadow: 0 0 13px rgba(0,0,0,0.18);
+  -webkit-box-shadow: 0 0 13px rgba(0,0,0,0.18);
+
+  .center-container {
+    margin: 0 auto;
+    padding-top: 2rem;
+  }
+}

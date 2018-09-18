@@ -1,0 +1,46 @@
+<% var data = {
+title: "Заголовок | Проект",
+author: "John"
+}; %>
+<%= _.template(require('./../includes/header.html'))(data) %>
+<div class="main-page">
+    <div class="center-container-wrap-g">
+        <div class="container grid-xl center-container">
+            <div class="columns">
+                <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-1 col-xl-1 col-1"></div>
+                <div class="column col-xs-12 col-md-12 col-sm-12 col-lg-10 col-xl-10 col-10">
+                    <div class="main-h1">
+                        <h1>Авторский шоколад со всей России</h1>
+                    </div>
+
+                    <%= _.template(require('./../includes/main_page_slider.html'))(data) %>
+                    <%= _.template(require('./../includes/main_page_categories.html'))(data) %>
+                    <div class="columns offer">
+                        <div class="column col-lg-6 col-md-12 col-xs-12">
+                            <div class="offer-item">
+                                <div class="text-2">Специальное предложение</div>
+                                <div class="text-1">10% скидка</div>
+                                <div class="text-3">При покупке онлайн</div>
+                            </div>
+                        </div>
+                        <div class="column col-lg-6 col-md-12 col-xs-12">
+                            <div class="offer-item">
+                                <div class="text-1">Бесплатная доставка</div>
+                                <div class="text-2">при заказе от 1 000 руб</div>
+                                <div class="text-3">предложение распространяется на все товары</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="base-head">Новые поступления</div>
+                    <div class="columns products"></div>
+                </div>
+                <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-1 col-xl-1 col-1"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<%= _.template(require('./../includes/footer_menu.html'))(data) %>
+
+<%= _.template(require('./../includes/footer.html'))(data) %>

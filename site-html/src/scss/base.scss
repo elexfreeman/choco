@@ -1,0 +1,27 @@
+.hide{
+  display: none !important;
+}
+
+.form-input{
+  color:#000000;
+}
+
+.base-head {
+  background-color: $primary-bg;
+  color: $primary-color;
+  padding: 1rem 1rem 1rem 1.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.btn:hover{
+      background: $btn-hover;
+}
+
+@media (max-width: 768px) {
+
+  .col-menu-left{
+    display: none;
+  }
+}
