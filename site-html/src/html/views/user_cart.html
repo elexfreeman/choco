@@ -1,0 +1,50 @@
+<% var data = {
+title: "Заголовок | Проект",
+author: "John"
+}; %>
+<%= _.template(require('./../includes/header.html'))(data) %>
+<div class="user">
+    <div class="center-container-wrap-g">
+        <div class="container grid-xl center-container">
+            <div>
+                <div class="columns">
+                    <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-3">
+                        <div class="menu-left">
+                            <div class="head">Личный кабинет</div>
+                            <div class="menu">
+                                <div class="item"><a href="/">На главную</a></div>
+                                <div class="item"><a class="active" aria-current="true" href="/">Заказы</a></div>
+                                <div class="item"><a aria-current="false" href="/cart">Корзина</a></div>
+                                <div class="item"><a>Выход</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-dashboard column col-xs-12 col-md-12 col-sm-12 col-lg-8 col-xl-8 col-9">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                            <li class="breadcrumb-item"><a class="active" aria-current="true" href="/">Личный
+                                кабинет</a></li>
+                            <li class="breadcrumb-item"><a>Корзина</a></li>
+                        </ul>
+                        <div>
+                            <div class="cart-component">
+                                <div class="container"><h4>Корзина пустая</h4></div>
+                            </div>
+
+                            <%= _.template(require('./../includes/user_cart_products.html'))(data) %>
+                            <%= _.template(require('./../includes/user_cart_delivery.html'))(data) %>
+                            <%= _.template(require('./../includes/user_cart_button.html'))(data) %>
+
+                        </div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= _.template(require('./../includes/footer_menu.html'))(data) %>
+
+<%= _.template(require('./../includes/footer.html'))(data) %>

@@ -1,0 +1,40 @@
+<% var data = {
+title: "Заголовок | Проект",
+author: "John"
+}; %>
+<%= _.template(require('./../includes/header.html'))(data) %>
+<div class="product-page">
+    <div id="user_container">
+        <div>
+            <div class="login-form">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column col-4"></div>
+                        <div class="column col-4"><h3>Вход в личный кабинет</h3>
+                            <div class="form-group"><label class="form-label" for="user-phone">Ваш номер
+                                телефона</label><input type="text" class="form-input" name="phone" id="user-phone"
+                                                       placeholder="+7..."></div>
+                            <div class="text-right">
+                                <button class="btn btn-primary">Получить одноразовый пароль</button>
+                            </div>
+                            <div class="hide">
+                                <div class="form-group">
+                                    <label class="form-label" for="user-pass">Одноразовый пароль из
+                                    смс</label><input type="text" class="form-input" name="pass" id="user-pass"
+                                                      placeholder=". . . "></div>
+                                <div class="text-right">
+                                    <button class="btn btn-primary">Войти</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column col-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= _.template(require('./../includes/footer_menu.html'))(data) %>
+
+<%= _.template(require('./../includes/footer.html'))(data) %>

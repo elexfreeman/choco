@@ -1,0 +1,94 @@
+<% var data = {
+title: "Заголовок | Проект",
+author: "John"
+}; %>
+<%= _.template(require('./../includes/header.html'))(data) %>
+<div class="user">
+    <div class="center-container-wrap-g">
+        <div class="container grid-xl center-container">
+            <div class="columns">
+                <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-3">
+                    <div class="menu-left">
+                        <div class="head">Личный кабинет</div>
+                        <div class="menu">
+                            <div class="item"><a href="/">На главную</a></div>
+                            <div class="item"><a class="active" aria-current="true" href="/">Заказы</a></div>
+                            <div class="item"><a aria-current="false" href="/cart">Корзина</a></div>
+                            <div class="item"><a>Выход</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-dashboard column col-xs-12 col-md-12 col-sm-12 col-lg-8 col-xl-8 col-9">
+                    <%= _.template(require('./../includes/user_head.html'))(data) %>
+                    <%= _.template(require('./../includes/user_head_edit.html'))(data) %>
+                    <div class="user-orders">
+                        <div class="base-head">Мои заказы</div>
+                        <div class="container orders-container"><a href="#">
+                            <div class="columns">
+                                <div class="column col-1 col-md-12">№ <b>9928</b><br>от 02.01.2018</div>
+                                <div class="column col-5 col-md-12">
+                                    <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img
+                                            src="/img/chokok1.jpg" alt="YZ"></figure>
+                                    <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img
+                                            src="/img/chokok1.jpg" alt="YZ"></figure>
+                                    <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img
+                                            src="/img/chokok1.jpg" alt="YZ"></figure>
+                                    <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img
+                                            src="/img/chokok1.jpg" alt="YZ"></figure>
+                                </div>
+                                <div class="column col-2 col-md-12"><span
+                                        class="label label-primary">Ожидает оплаты</span></div>
+                                <div class="column col-4 col-md-12 text-right summa">12 000 руб <i
+                                        class="icon icon-arrow-right"></i></div>
+                            </div>
+                        </a>
+                            <hr>
+                            <a href="#">
+                                <div class="columns">
+                                    <div class="column col-1 col-md-12">№ 9928<br>от 02.01.2018</div>
+                                    <div class="column col-5 col-md-12">
+                                        <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img
+                                                src="/img/chokok1.jpg" alt="YZ"></figure>
+                                        <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img
+                                                src="/img/chokok1.jpg" alt="YZ"></figure>
+                                        <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img
+                                                src="/img/chokok1.jpg" alt="YZ"></figure>
+                                        <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img
+                                                src="/img/chokok1.jpg" alt="YZ"></figure>
+                                    </div>
+                                    <div class="column col-2 col-md-12"><span
+                                            class="label label-primary">Ожидает оплаты</span></div>
+                                    <div class="column col-4 col-md-12 text-right summa">12 000 руб <i
+                                            class="icon icon-arrow-right"></i></div>
+                                </div>
+                            </a>
+                            <hr>
+                            <a href="#">
+                                <div class="columns">
+                                    <div class="column col-1 col-md-12">№ 9928<br>от 02.01.2018</div>
+                                    <div class="column col-5 col-md-12">
+                                        <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img
+                                                src="/img/chokok1.jpg" alt="YZ"></figure>
+                                        <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img
+                                                src="/img/chokok1.jpg" alt="YZ"></figure>
+                                        <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img
+                                                src="/img/chokok1.jpg" alt="YZ"></figure>
+                                        <figure class="avatar avatar-lg badge" data-badge="8" data-initial="YZ"><img
+                                                src="/img/chokok1.jpg" alt="YZ"></figure>
+                                    </div>
+                                    <div class="column col-2 col-md-12"><span
+                                            class="label label-primary">Ожидает оплаты</span></div>
+                                    <div class="column col-4 col-md-12 text-right summa">12 000 руб <i
+                                            class="icon icon-arrow-right"></i></div>
+                                </div>
+                            </a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= _.template(require('./../includes/footer_menu.html'))(data) %>
+
+<%= _.template(require('./../includes/footer.html'))(data) %>

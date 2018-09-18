@@ -3,3 +3,14 @@
   background-color: #fff;
   padding: 1rem;
 }
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 23rem;
+
+  .btn{
+    margin-top:1rem;
+  }
+}

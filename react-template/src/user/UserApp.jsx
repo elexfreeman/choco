@@ -29,7 +29,7 @@ const UserApp = (props) => {
                                         <Switch>
                                             <Route exact path={'/'}
                                                    render={props => (
-                                                       <UserCart isLK={true} {...props}/>
+                                                       <UserDashboard isLK={true} {...props}/>
                                                    )}/>
 
                                             <Route path={'/edit_profile'} component={UserEditProfile}/>
