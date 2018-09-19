@@ -120,7 +120,8 @@ describe('Get (order_id = 21) and (user_id = 1)', () => {
 
     it('should return user_id=1', () => {
         return maybe()
-            .then(data => {   
+            .then(data => { 
+                log(data)  ;
                 data.user_id.should.be.eql(1);
             });
     });

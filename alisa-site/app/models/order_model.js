@@ -13,11 +13,11 @@ class OrderModel {
 
 
     Get(order_id, user_id) {
-        
+
         return new Promise((resolve, reject) => {
             let sql = "select * from orders o where (o.id=?)and(o.user_id=?) limit 1";
             conn.query(sql, [order_id, user_id], (data, err) => {
-                if (!err) {                    
+                if (!err) {
                     let resp = JSON.parse(JSON.stringify(data));
                     if (resp.length > 0) {
                         resolve(resp[0]);
@@ -68,25 +68,27 @@ class OrderModel {
 
 
     //создает новый заказ для юзер
-    Create(order) {
-        return new Promise((resolve, reject) => {
+    async Create(order) {
+        let order_id = null;
+        //подсчитываем общую сумму
+        order.summa = this.GetProductsSumma(order.products);
+        order_id = await this.Insert(order);
 
-            let order_id = null;
-            //подсчитываем общую сумму
-            order.summa = this.GetProductsSumma(order.products);
-
-            this.Insert(order).then(id => {
-                order_id = id;
-                order.products.map((product, key) => {
-                    this.InserOrderProduct(order_id, product);
-                });
-            })
-                .then(r => resolve(order_id))
-                .catch(e => reject(e));
-
-
+        await order.products.forEach((product, key) => {
+            this.InserOrderProduct(order_id, product);
         });
-    }
+
+        let order_products = await this.GetOrderProducts(order_id);
+
+        let summa = 0;
+        order_products.forEach((product, key) => {
+            summa += (product.price * product.count);
+        });
+
+        await this.UpdateOrderPrice(order_id, summa);
+
+        return order_id;
+    };
 
     //вставляет новый заказ
     /* 
@@ -110,6 +112,7 @@ class OrderModel {
            , status: _ORDER_STATUS
        }
    */
+
     // @returns {number} - order_id
     Insert(order) {
         return new Promise((resolve, reject) => {
@@ -122,7 +125,9 @@ class OrderModel {
                 , order.comment
                 , order.status
             ], function (data, err) {
-                if (err) { reject(err); }
+                if (err) {
+                    reject(err);
+                }
                 resolve(data.insertId);
             });
         });
@@ -140,8 +145,20 @@ class OrderModel {
                 , product.count
 
             ], function (data, err) {
-                if (err) { reject(err); }
+                if (err) {
+                    reject(err);
+                }
                 resolve(data.insertId);
+            });
+        });
+    }
+
+    UpdateOrderPrice(order_id, summa) {
+        return new Promise(function (resolve, reject) {
+            let sql = "update orders set summa = ? where id = ? ";
+            conn.query(sql, [summa, order_id], (resp, err) => {
+                if (err) reject({e: err});
+                resolve(true);
             });
         });
     }

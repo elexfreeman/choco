@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import UserOrders from "./UserOrders";
+import UserOrders from "./orders/UserOrders";
 
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";

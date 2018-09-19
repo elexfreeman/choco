@@ -13,6 +13,7 @@ import {onUpdateUserData} from '../redux/actions/userInfo';
 import {BrowserRouter} from 'react-router-dom';
 import UserCart from "./UserCart";
 import UserDelivery from "./UserDelivery";
+import UserOrder from "./order/UserOrder";
 
 const UserApp = (props) => {
 
@@ -33,6 +34,7 @@ const UserApp = (props) => {
                                                    )}/>
 
                                             <Route path={'/edit_profile'} component={UserEditProfile}/>
+                                            <Route path={'/order/:order_id'} component={UserOrder}/>
                                             <Route exact path={'/cart'} component={UserCart}/>
                                             <Route exact path={'/delivery'} component={UserDelivery}/>
                                         </Switch>
