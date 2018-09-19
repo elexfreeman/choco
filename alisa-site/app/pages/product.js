@@ -43,7 +43,7 @@ router.get('/', function (req, res, next) {
             product.description = product.description.replace(/\r\n|\r|\n/g, "<br />");
 
         res.render('product_page/index', {
-            seo_call: seo_call
+            seo: seo_call
             , product: product
             , categories: categories
             , products_new: products_new
