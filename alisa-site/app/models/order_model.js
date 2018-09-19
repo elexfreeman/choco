@@ -13,7 +13,7 @@ class OrderModel {
 
 
     Get(order_id, user_id) {
-        console.log(order_id, user_id);
+        
         return new Promise((resolve, reject) => {
             let sql = "select * from orders o where (o.id=?)and(o.user_id=?) limit 1";
             conn.query(sql, [order_id, user_id], (data, err) => {

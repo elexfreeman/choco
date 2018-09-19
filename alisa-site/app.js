@@ -14,27 +14,6 @@ let admin_products = require('./admin/products/routes');
 let admin_manufacturer = require('./admin/manufacturer/routes');
 let imgUploader = require('./admin/imgUploader');
 
-/*-------------------*/
-/*site routers*/
-/*-------------------*/
-let admin = require('./app/pages/adm');
-let index = require('./app/pages/main_page');
-
-
-let category = require('./app/pages/category');
-let product = require('./app/pages/product');
-let about = require('./app/pages/about');
-
-let cart = require('./app/pages/cart');
-
-
-let user = require('./app/pages/user');
-let user_api = require('./app/api/user_api');
-let login_api = require('./app/api/login/routes');
-
-
-let order_api = require('./app/api/order_api');
-
 
 
 const cors = require('cors');
@@ -69,11 +48,36 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+/*-------------------*/
+/*site routers*/
+/*-------------------*/
+let admin = require('./app/pages/adm');
+let index = require('./app/pages/main_page');
+
+
+let category = require('./app/pages/category');
+let product = require('./app/pages/product');
+let about = require('./app/pages/about');
+
+let cart = require('./app/pages/cart');
+
+
+let user = require('./app/pages/user');
+let user_api = require('./app/api/user_api');
+let login_api = require('./app/api/login/routes');
+
+
+let order_api = require('./app/api/order_api');
+let orders_api = require('./app/api/orders_api');
+
+
 app.use('/', index);
 app.use('/category/*', category);
 app.use('/cart', cart);
 
 app.use('/order_api', order_api);
+app.use('/orders_api', orders_api);
 
 app.use('/login_api', login_api);
 

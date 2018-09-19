@@ -1,32 +1,32 @@
 const express = require('express');
 const router = express.Router();
 const UserModel = require('../models/user_model');
-const OrderModel = require('../models/order_model');
-let Order = new OrderModel;
+const OrdersModel = require('../models/orders_model');
+let Orders = new OrdersModel;
 
 router.post('/', function (req, res) {
     res.send('POST request to the homepage');
 });
 
-/*создает заказ*/
+/*списокзаказов*/
 router.post('/get', (req, res, next) => {   
     /* формируем ответ */
     let resp = {
         user: false
-        , order: false
-    };
-   
+        , orders: []
+    };    
+    console.log(req.body);
     if (req.body.apiKey !== undefined) {
         /* получаем ину о юзере */
         UserModel.getUserInfoByApiKey(req.body.apiKey).then(user => {
             /* user_id в ответ */
             resp.user = user;
             /* выбираем заказ */
-            return Order.Get(req.body.order_id, user.id);
+            return Orders.Get(user.id, req.body.offset, req.body.limit);
         })
             .then(o => {
                 /* вслучае если все ок */
-                resp.order = o;
+                resp.orders = o;
                 res.json(resp)
             })
             .catch(e => res.json(resp));
