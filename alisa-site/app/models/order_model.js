@@ -3,18 +3,28 @@ const conn = require('../../db');
 
 class OrderModel {
 
+    constructor() {
+        this.ORDER_NEW = 1;
+        this.ORDER_PAYID = 2;
+        this.ORDER_IN_ROAD = 3;
+        this.ORDER_IN_POST = 4;
+        this.ORDER_DONE = 5;
+    }
+
+
     Get(order_id, user_id) {
+        console.log(order_id, user_id);
         return new Promise((resolve, reject) => {
             let sql = "select * from orders o where (o.id=?)and(o.user_id=?) limit 1";
             conn.query(sql, [order_id, user_id], (data, err) => {
-                if (!err) {
+                if (!err) {                    
                     let resp = JSON.parse(JSON.stringify(data));
                     if (resp.length > 0) {
                         resolve(resp[0]);
                     } else {
                         resolve({});
                     }
-                    
+
                 } else {
                     reject(err);
                 }

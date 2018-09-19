@@ -7,7 +7,7 @@ export function generateSmsPass(phone) {
         let xhr = new XMLHttpRequest();
         let body = 'phone=' + encodeURIComponent(phone);
 
-        xhr.open("POST", rest_server + 'login/generateSmsPass', true);
+        xhr.open("POST", rest_server + 'login_api/generateSmsPass', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
         /*событие изменения статуса запроса*/
@@ -36,7 +36,7 @@ export function login(phone, pass) {
         let body = 'phone=' + encodeURIComponent(phone) +
             '&pass=' + encodeURIComponent(pass);
 
-        xhr.open("POST", rest_server + 'login/login', true);
+        xhr.open("POST", rest_server + 'login_api/login', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
         /*событие изменения статуса запроса*/

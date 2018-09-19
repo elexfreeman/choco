@@ -112,15 +112,15 @@ describe('Get order products', () => {
 
 
 
-describe('Get (order_id = 1) and (user_id = 1)', () => {
+describe('Get (order_id = 21) and (user_id = 1)', () => {
     let maybe;
     beforeEach(() => {
-        maybe = () => Order.Get(1, 1);
+        maybe = () => Order.Get(21, 1);
     });
 
     it('should return user_id=1', () => {
         return maybe()
-            .then(data => {               
+            .then(data => {   
                 data.user_id.should.be.eql(1);
             });
     });

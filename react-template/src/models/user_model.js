@@ -4,12 +4,12 @@ import {rest_server} from './settings';
 export function getUserInfo() {
     return new Promise(function (resolve, reject) {
         if (localStorage.getItem('apiKey') === undefined) {
-            reject(1)
+            reject(1);
         } else {
             let xhr = new XMLHttpRequest();
             let body = 'apiKey=' + encodeURIComponent(localStorage.getItem('apiKey'));
 
-            xhr.open("POST", rest_server + 'user/getUserInfo', true);
+            xhr.open("POST", rest_server + 'user_api/getUserInfo', true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
             /*событие изменения статуса запроса*/
@@ -38,34 +38,6 @@ export function getUserInfo() {
 }
 
 
-export function login(phone, pass) {
-    return new Promise(function (resolve, reject) {
-        let xhr = new XMLHttpRequest();
-        let body = 'phone=' + encodeURIComponent(phone) +
-            '&pass=' + encodeURIComponent(pass);
-
-        xhr.open("POST", rest_server + 'login/login', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-        /*событие изменения статуса запроса*/
-        xhr.onreadystatechange = function () {
-            /*4: request finished and response is ready*/
-            if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
-                    /*все норм логин прошел*/
-                    resolve(JSON.parse(this.responseText));
-                } else {
-                    /*чтото с конектом или сервером или еще чего*/
-                    reject(xhr.status);
-                }
-            }
-        };
-        /*отправляем запрос*/
-        xhr.send(body);
-
-    });
-}
-
 
 export function update(arg) {
     return new Promise(function (resolve, reject) {
@@ -78,7 +50,7 @@ export function update(arg) {
                 body += '&' + key + '=' + encodeURIComponent(arg[key]);
             }
 
-            xhr.open("POST", rest_server + 'user/update', true);
+            xhr.open("POST", rest_server + 'user_api/update', true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
             /*событие изменения статуса запроса*/

@@ -33,6 +33,9 @@ let user_api = require('./app/api/user_api');
 let login_api = require('./app/api/login/routes');
 
 
+let order_api = require('./app/api/order_api');
+
+
 
 const cors = require('cors');
 
@@ -70,7 +73,10 @@ app.use('/', index);
 app.use('/category/*', category);
 app.use('/cart', cart);
 
+app.use('/order_api', order_api);
+
 app.use('/login_api', login_api);
+
 
 app.use('/user', user);
 app.use('/user_api', user_api);

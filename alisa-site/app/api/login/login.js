@@ -1,6 +1,6 @@
-var conn = require('../../db');
-let UserModel = require('../models/user_model');
-let Sms = require('../lib/sms');
+var conn = require('../../../db');
+let UserModel = require('../../models/user_model');
+let Sms = require('../../lib/sms');
 /*модуль логина/регистрации юзера в систему*/
 
 /*построен на промисах*/
