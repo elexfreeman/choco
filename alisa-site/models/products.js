@@ -58,7 +58,7 @@ function insert(d) {
         let sql = "INSERT INTO products " +
             " (`caption`, `description` , `price`, `main_img`, `img1`, `img2`, `img3`, `img4`, " +
             "`manufacturer_id`, `filling`, `massa`, `cacao_percent`, `sugar`, `choco_type`) " +
-            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
         conn.query(sql,
             [d.caption, d.description, d.price, d.main_img,
                 d.img1, d.img2, d.img3, d.img4
