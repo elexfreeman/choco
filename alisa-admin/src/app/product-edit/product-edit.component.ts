@@ -42,7 +42,8 @@ export class ProductEditComponent implements OnInit {
             massa: 0,
             cacao_percent: 0,
             filling: '',
-            sugar: 0
+            sugar: 0,
+            choco_type: 0
         };
 
         this.options = {

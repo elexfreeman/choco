@@ -50,11 +50,15 @@ function insert(d) {
             d.sugar = 0
         }
 
+        if (d.choco_type == null) {
+            d.choco_type = 0
+        }
+
 
         let sql = "INSERT INTO products " +
             " (`caption`, `description` , `price`, `main_img`, `img1`, `img2`, `img3`, `img4`, " +
-            "`manufacturer_id`, `filling`, `massa`, `cacao_percent`, `sugar`) " +
-            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+            "`manufacturer_id`, `filling`, `massa`, `cacao_percent`, `sugar`, `choco_type`) " +
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
         conn.query(sql,
             [d.caption, d.description, d.price, d.main_img,
                 d.img1, d.img2, d.img3, d.img4
@@ -163,11 +167,12 @@ function update(id, arg) {
             ",massa = ? " +
             ",cacao_percent = ? " +
             ",sugar = ? " +
+            ",choco_type = ? " +
             " where id = ? ";
         conn.query(sql, [
             arg.caption, arg.url, arg.price, arg.main_img, arg.description,
             arg.img1, arg.img2, arg.img3, arg.img4,
-            arg.manufacturer_id, arg.filling, arg.massa, arg.cacao_percent, arg.sugar, id], function (resp, err) {
+            arg.manufacturer_id, arg.filling, arg.massa, arg.cacao_percent, arg.sugar, arg.choco_type, id], function (resp, err) {
             if (!err) {
                 resolve(true);
             } else {
