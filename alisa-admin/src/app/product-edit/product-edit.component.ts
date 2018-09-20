@@ -40,7 +40,8 @@ export class ProductEditComponent implements OnInit {
             categories: [],
             manufacturer_id: 0,
             massa: 0,
-            cacao_percent: 0
+            cacao_percent: 0,
+            filling: ''
         };
 
         this.options = {

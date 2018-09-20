@@ -26,6 +26,7 @@ export interface Product {
     manufacturer_id: number;
     massa: number;
     cacao_percent: number;
+    filling: string;
     categories: ProductCategories[];
 }
 
