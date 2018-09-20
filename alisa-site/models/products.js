@@ -46,23 +46,30 @@ function insert(d) {
         if (d.cacao_percent == null) {
             d.cacao_percent = 0
         }
+        if (d.sugar == null) {
+            d.sugar = 0
+        }
 
 
         let sql = "INSERT INTO products " +
             " (`caption`, `description` , `price`, `main_img`, `img1`, `img2`, `img3`, `img4`, " +
-            "`manufacturer_id`, `filling`, `massa`, `cacao_percent`) " +
+            "`manufacturer_id`, `filling`, `massa`, `cacao_percent`, `sugar`) " +
             " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
-        conn.query(sql, [d.caption, d.description, d.price, d.main_img, d.img1, d.img2, d.img3, d.img4, d.manufacturer_id], function (data, err) {
+        conn.query(sql,
+            [d.caption, d.description, d.price, d.main_img,
+                d.img1, d.img2, d.img3, d.img4
+                , d.manufacturer_id, d.filling, d.massa, d.cacao_percent, d.sugar],
+            function (data, err) {
 
-            if (!err) {
-                updateUrl(data.insertId, urlGen(data.insertId.toString() + '-' + d.caption)).then((status) => {
-                    resolve(data.insertId);
-                });
-            } else {
-                console.log('Ошибка вставки');
-                reject(err);
-            }
-        });
+                if (!err) {
+                    updateUrl(data.insertId, urlGen(data.insertId.toString() + '-' + d.caption)).then((status) => {
+                        resolve(data.insertId);
+                    });
+                } else {
+                    console.log('Ошибка вставки');
+                    reject(err);
+                }
+            });
     });
 }
 
@@ -155,11 +162,12 @@ function update(id, arg) {
             ",filling = ? " +
             ",massa = ? " +
             ",cacao_percent = ? " +
+            ",sugar = ? " +
             " where id = ? ";
         conn.query(sql, [
             arg.caption, arg.url, arg.price, arg.main_img, arg.description,
             arg.img1, arg.img2, arg.img3, arg.img4,
-            arg.manufacturer_id,arg.filling,arg.massa,arg.cacao_percent, id], function (resp, err) {
+            arg.manufacturer_id, arg.filling, arg.massa, arg.cacao_percent, arg.sugar, id], function (resp, err) {
             if (!err) {
                 resolve(true);
             } else {

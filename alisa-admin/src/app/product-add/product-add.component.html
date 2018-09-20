@@ -16,6 +16,7 @@
         <div class="columns">
             <div class="column col-gapless">
                 <div class="form-horizontal">
+                    <h4>Основное</h4>
                     <div class="form-group">
                         <div class="col-3 col-sm-12">
                             <label class="form-label">Название</label>
@@ -41,27 +42,26 @@
                         </div>
                     </div>
 
+                    <br>
+                    <h4>Категории</h4>
                     <div class="form-group">
-                        <div class="col-3 col-sm-12">
-                            <label class="form-label">Категории</label>
-                        </div>
                         <label class="form-checkbox" *ngFor="let c of product.categories" for="cc_{{c.id}}" >
                             <input [(ngModel)]="c.checked" id="cc_{{c.id}}" type="checkbox">
                             <i class="form-icon"></i> {{c.caption}}
                         </label>
                     </div>
 
+                    <br>
+                    <h4>Производитель</h4>
                     <div class="form-group" *ngIf="manufacturerList">
-                        <div class="col-3 col-sm-12">
-                            <label class="form-label">Производитель</label>
-                        </div>
-
                             <select  [(ngModel)]="product.manufacturer_id"  class="form-select">
                                 <option value="0">Нет</option>
                                 <option value="{{m.id}}" *ngFor="let m of manufacturerList">{{m.caption}}</option>
                             </select>
                     </div>
 
+                    <br>
+                    <h4>Храрактеристики</h4>
                     <div class="form-group">
                         <div class="col-3 col-sm-12">
                             <label class="form-label">Масса</label>
@@ -90,13 +90,28 @@
                         </div>
                     </div>
 
-
-
                     <div class="form-group">
-                        <label class="form-label">Описание</label>
+                        <div class="col-3 col-sm-12">
+                            <label class="form-label">Подсластитель</label>
+                        </div>
+                        <select  [(ngModel)]="product.sugar"  class="form-select">
+                            <option value="0">Нет</option>
+                            <option value="1">Сахар рафинад</option>
+                            <option value="2">Сахар тростниковый</option>
+                            <option value="3">Мед</option>
+                            <option value="4"> Панелла  Пекмез</option>
+                        </select>
+                    </div>
+
+
+                    <br>
+                    <h4>Описание</h4>
+                    <div class="form-group">
                         <textarea [(ngModel)]="product.description" class="form-input" rows="5"></textarea>
                     </div>
 
+                    <br>
+                    <h4>Изображения</h4>
                     <!--*******************-->
                     <div class="form-group">
                         <div class="col-3 col-sm-12">

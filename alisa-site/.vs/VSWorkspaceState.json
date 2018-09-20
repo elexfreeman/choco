@@ -1,11 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\admin",
+    "\\admin\\products",
     "\\app",
+    "\\app\\api",
+    "\\app\\models",
     "\\app\\pages",
-    "\\views",
-    "\\views\\main_page"
+    "\\models",
+    "\\test"
   ],
-  "SelectedNode": "\\views\\main_page\\index.ejs",
+  "SelectedNode": "\\app\\api\\order_api.js",
   "PreviewInSolutionExplorer": false
 }

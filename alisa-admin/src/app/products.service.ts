@@ -27,6 +27,7 @@ export interface Product {
     massa: number;
     cacao_percent: number;
     filling: string;
+    sugar: number;
     categories: ProductCategories[];
 }
 
