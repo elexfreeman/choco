@@ -24,6 +24,8 @@ export interface Product {
     img4: string;
     deleted: number;
     manufacturer_id: number;
+    massa: number;
+    cacao_percent: number;
     categories: ProductCategories[];
 }
 

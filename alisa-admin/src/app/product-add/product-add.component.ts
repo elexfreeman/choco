@@ -39,7 +39,9 @@ export class ProductAddComponent implements OnInit {
             deleted: 0,
             price: 0,
             categories: [],
-            manufacturer_id: 0
+            manufacturer_id: 0,
+            massa: 0,
+            cacao_percent: 0
         };
 
         this.options = {
