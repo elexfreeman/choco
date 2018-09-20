@@ -62,7 +62,7 @@ function insert(d) {
         conn.query(sql,
             [d.caption, d.description, d.price, d.main_img,
                 d.img1, d.img2, d.img3, d.img4
-                , d.manufacturer_id, d.filling, d.massa, d.cacao_percent, d.sugar],
+                , d.manufacturer_id, d.filling, d.massa, d.cacao_percent, d.sugar, d.choco_type],
             function (data, err) {
 
                 if (!err) {
