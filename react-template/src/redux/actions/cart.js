@@ -1,7 +1,8 @@
-import {cartUpdate, cartGetAll, cartRemove, cartAdd} from '../../cart/Cart';
+import {cartUpdate, cartGetAll, cartRemove, cartAdd, cartClear} from '../../cart/Cart';
 
 import {getCartRest} from '../../models/cart_model';
 
+/*[{"productId":1,"count":7}]*/
 /*событие добавления в корзину*/
 export const onAddCart = (args) => dispatch => {
     /*превращаем все в int*/
@@ -10,14 +11,14 @@ export const onAddCart = (args) => dispatch => {
         count: args.count
     });
 
-    getCartRest().then((data) => {
+    getCartRest().then(data => {
         dispatch({type: 'ADD_CART', payload: data.products})
     });
 };
 
 /*ифа о корзине*/
 export const onGetCart = () => dispatch => {
-    getCartRest().then((data) => {
+    getCartRest().then(data => {
         dispatch({type: 'CART_GET', payload: data.products})
     });
 };
@@ -48,6 +49,17 @@ export const onDelete = (productId) => {
 
     return {
         type: 'CART_DELETE'
+        , payload: cartGetAll()
+    }
+};
+
+
+/*удаление*/
+export const onClear = () => {
+    cartClear();
+
+    return {
+        type: 'CART_CLEAR'
         , payload: cartGetAll()
     }
 };

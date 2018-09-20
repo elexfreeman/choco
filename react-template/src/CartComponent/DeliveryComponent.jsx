@@ -20,6 +20,7 @@ class DeliveryComponent extends Component {
     onChangeAddress(e){
         this.setState({address: e.target.value});
         localStorage.setItem('delivery_address',e.target.value);
+        this.props.onChange(e.target.value);
     }
 
 

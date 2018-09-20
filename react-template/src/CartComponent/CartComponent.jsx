@@ -10,22 +10,13 @@ const CartComponent = ({cart}) => {
 
 
     return (<div>
-        {cart.length > 0 ? (
-            <div>
-                <div className='cart-component'>
-                    <div className='container'>
-                        <h4>Корзина</h4>
-                        <CartComponentTable products={cart}/>
-                        <CartSumma products={cart}/>
-                    </div>
-                </div>
-                <DeliveryComponent/>
-            </div>
-        ) : (<div className='cart-component'>
+        <div className='cart-component'>
             <div className='container'>
-                <h4>Корзина пустая</h4>
+                <h4>Корзина</h4>
+                <CartComponentTable products={cart}/>
+                <CartSumma products={cart}/>
             </div>
-        </div>)}
+        </div>
     </div>)
 
 };

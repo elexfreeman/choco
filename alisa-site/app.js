@@ -7,14 +7,6 @@ let bodyParser = require('body-parser');
 let minifyHTML = require('express-minify-html');
 let compression = require('compression');
 
-/*admin*/
-let users = require('./routes/users');
-let admin_categories = require('./admin/categories/routes');
-let admin_products = require('./admin/products/routes');
-let admin_manufacturer = require('./admin/manufacturer/routes');
-let imgUploader = require('./admin/imgUploader');
-
-
 
 const cors = require('cors');
 
@@ -52,46 +44,61 @@ app.use(express.static(path.join(__dirname, 'public')));
 /*-------------------*/
 /*site routers*/
 /*-------------------*/
-let admin = require('./app/pages/adm');
-let index = require('./app/pages/main_page');
 
+let index = require('./app/pages/main_page');
+app.use('/', index);
 
 let category = require('./app/pages/category');
-let product = require('./app/pages/product');
-let about = require('./app/pages/about');
+app.use('/category/*', category);
+
 
 let cart = require('./app/pages/cart');
+app.use('/cart', cart);
 
 
-let user = require('./app/pages/user');
-let user_api = require('./app/api/user_api');
-let login_api = require('./app/api/login/routes');
+let cart_api = require('./app/api/cart_api');
+app.use('/cart_api', cart_api);
 
 
 let order_api = require('./app/api/order_api');
-let orders_api = require('./app/api/orders_api');
-
-
-app.use('/', index);
-app.use('/category/*', category);
-app.use('/cart', cart);
-
 app.use('/order_api', order_api);
+
+
+let orders_api = require('./app/api/orders_api');
 app.use('/orders_api', orders_api);
 
+
+let login_api = require('./app/api/login/routes');
 app.use('/login_api', login_api);
 
 
+let user = require('./app/pages/user');
 app.use('/user', user);
+
+let user_api = require('./app/api/user_api');
 app.use('/user_api', user_api);
 
+let about = require('./app/pages/about');
 app.use('/about', about);
+
+
+let admin = require('./app/pages/adm');
 app.use('/admin', admin);
+
+/*admin*/
+let users = require('./routes/users');
+let admin_categories = require('./admin/categories/routes');
+let admin_products = require('./admin/products/routes');
+let admin_manufacturer = require('./admin/manufacturer/routes');
+let imgUploader = require('./admin/imgUploader');
+
 app.use('/admin/categories/', admin_categories);
 app.use('/admin/products/', admin_products);
 app.use('/admin/manufacturer/', admin_manufacturer);
 app.use('/admin/imgUploader/', imgUploader);
 
+
+let product = require('./app/pages/product');
 app.use('/*', product);
 
 // catch 404 and forward to error handler

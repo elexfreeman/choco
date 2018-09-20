@@ -42,7 +42,7 @@ let order_id = 21;
 describe('Get order:' + order_id, function () {
     let maybe;
 
-    let xhr = new XMLHttpRequest()
+    let xhr = new XMLHttpRequest();
     beforeEach(() => {
         maybe = () => OrderModel.OrderModel.Get(order_id, xhr, apiKey);
     });
@@ -59,7 +59,7 @@ describe('Get order:' + order_id, function () {
 describe('Create order:', function () {
     let maybe;
 
-    let xhr = new XMLHttpRequest()
+    let xhr = new XMLHttpRequest();
     beforeEach(() => {
         maybe = () => OrderModel.OrderModel.Create(test_order, xhr, apiKey);
     });

@@ -30,13 +30,28 @@ function insert(d) {
         if (d.price == null) {
             d.price = 0;
         }
+
         if (d.manufacturer_id == null) {
             d.manufacturer_id = 0;
         }
 
+        if (d.filling == null) {
+            d.filling = ''
+        }
 
-        let sql = "INSERT INTO products (`caption`, `description` , `price`, `main_img`, `img1`, `img2`, `img3`, `img4`, `manufacturer_id`) " +
-            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? )";
+        if (d.massa == null) {
+            d.massa = 0
+        }
+
+        if (d.cacao_percent == null) {
+            d.cacao_percent = 0
+        }
+
+
+        let sql = "INSERT INTO products " +
+            " (`caption`, `description` , `price`, `main_img`, `img1`, `img2`, `img3`, `img4`, " +
+            "`manufacturer_id`, `filling`, `massa`, `cacao_percent`) " +
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
         conn.query(sql, [d.caption, d.description, d.price, d.main_img, d.img1, d.img2, d.img3, d.img4, d.manufacturer_id], function (data, err) {
 
             if (!err) {
@@ -137,8 +152,14 @@ function update(id, arg) {
             ",img3 = ? " +
             ",img4 = ? " +
             ",manufacturer_id = ? " +
+            ",filling = ? " +
+            ",massa = ? " +
+            ",cacao_percent = ? " +
             " where id = ? ";
-        conn.query(sql, [arg.caption, arg.url, arg.price, arg.main_img, arg.description, arg.img1, arg.img2, arg.img3, arg.img4, arg.manufacturer_id, id], function (resp, err) {
+        conn.query(sql, [
+            arg.caption, arg.url, arg.price, arg.main_img, arg.description,
+            arg.img1, arg.img2, arg.img3, arg.img4,
+            arg.manufacturer_id,arg.filling,arg.massa,arg.cacao_percent, id], function (resp, err) {
             if (!err) {
                 resolve(true);
             } else {

@@ -5,8 +5,6 @@ import {render} from 'react-dom';
 // redux
 import {Provider} from 'react-redux';
 
-import {BrowserRouter} from 'react-router-dom';
-
 import store from './redux/store';
 
 
@@ -27,9 +25,7 @@ let user_container = document.getElementById('user_container');
 
 render(
     <Provider store={store}>
-
-            <UserApp/>
-
+        <UserApp/>
     </Provider>
     , user_container);
 

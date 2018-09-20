@@ -7,7 +7,7 @@ let left_menu = require('../../models/left_menu');
 const SeoModel = require('../models/seo_model');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', async function (req, res, next) {
 
     /*категории*/
     let categories = [];
@@ -20,23 +20,15 @@ router.get('/', function (req, res, next) {
     let manufacturer = [];
     let seo_call = {};
 
-
-    left_menu().then((c) => {
-        categories = c;
-        return Products.getPopular();
-
-    }).then((popProducts) => {
-        products_popular = popProducts;
-        return Products.getByCategoryId(11, 10);
-    }).then(resp => {
-        products_new = resp;
-        return Products.getDiscont(5);
-    }).then(resp => {
-        discont = resp;
-        return SeoModel.Get('main');
-
-    }).then(seo => {
-        seo_call = seo;
+    try {
+        categories = await left_menu();
+        products_popular = await Products.getPopular();
+        products_new = await Products.getByCategoryId(11, 10);
+        discont = await Products.getDiscont(5);
+        seo_call = await SeoModel.Get('main');
+    } catch (e) {
+        console.log(e);
+    } finally {
         res.render('main_page/index.ejs', {
             seo: seo_call
             , categories: categories
@@ -45,16 +37,8 @@ router.get('/', function (req, res, next) {
             , discont: discont
             , manufacturer: manufacturer
         });
-    }).catch(e => {
-        res.render('main_page/index.ejs', {
-            seo: seo_call
-            , categories: categories
-            , products_new: products_new
-            , products_popular: products_popular
-            , discont: discont
-            , manufacturer: manufacturer
-        });
-    });
+    }
+
 
 });
 

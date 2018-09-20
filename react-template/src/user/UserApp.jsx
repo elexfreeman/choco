@@ -35,7 +35,13 @@ const UserApp = (props) => {
 
                                             <Route path={'/edit_profile'} component={UserEditProfile}/>
                                             <Route path={'/order/:order_id'} component={UserOrder}/>
-                                            <Route exact path={'/cart'} component={UserCart}/>
+
+                                            <Route exact path={'/cart'}
+                                                   render={props => (
+                                                       <UserCart isLK={true} {...props}/>
+                                                   )}/>
+
+
                                             <Route exact path={'/delivery'} component={UserDelivery}/>
                                         </Switch>
                                 </BrowserRouter>

@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-let left_menu = require('../../models/left_menu');
-
+const left_menu = require('../../models/left_menu');
+const Products = require('../../models/products');
 const SeoModel = require('../models/seo_model');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', async function (req, res, next) {
 
     /*категории*/
     let categories = [];
@@ -19,31 +19,20 @@ router.get('/', function (req, res, next) {
     let manufacturer = [];
     let seo_call = {};
 
-
-    left_menu().then((c) => {
-        categories = c;       
-        return Products.getDiscont(5);
-    }).then(resp => {
-        discont = resp;
-        return SeoModel.Get('main');
-
-    }).then(seo => {
-        seo_call = seo;
+    try {
+        categories = await left_menu();
+        discont = await Products.getDiscont(5);
+        seo_call = await SeoModel.Get('user');
+    } catch (e) {
+        console.log(e);
+    } finally {
         res.render('main_page/index.ejs', {
             seo: seo_call
-            , categories: categories          
+            , categories: categories
             , discont: discont
             , manufacturer: manufacturer
         });
-    }).catch(e => {
-        res.render('user/user.ejs', {
-            seo: seo_call
-            , categories: categories           
-            , discont: discont
-            , manufacturer: manufacturer
-        });
-    });
-
+    }
 });
 
 
