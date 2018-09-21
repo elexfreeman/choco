@@ -86,7 +86,7 @@ app.use('/about', about);
 let admin = require('./app/pages/adm');
 app.use('/admin', admin);
 app.use('/admin/*', (req, res) =>{
-    res.sendFile('public/admin/index.html');
+    res.sendFile('public/admin/index.html', {"root": __dirname});
 });
 
 /*admin*/
