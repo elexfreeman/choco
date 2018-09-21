@@ -26,7 +26,7 @@ export class ManufacturerService {
     /*список всех кают корабеля*/
     getList(): Observable<Manufacturer[]> {
         return this.http.get<Manufacturer[]>(
-            restServer + 'manufacturer/getAll',
+            restServer + 'admin_api/manufacturer/getAll',
             {})
             .pipe();
     }

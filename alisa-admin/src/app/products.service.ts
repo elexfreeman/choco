@@ -43,7 +43,7 @@ export class ProductsService {
     /*список всех кают корабеля*/
     getList(): Observable<Product[]> {
         return this.http.get<Product[]>(
-            restServer + 'products/getList',
+            restServer + 'admin_api/products/getList',
             {})
             .pipe();
     }
@@ -51,7 +51,7 @@ export class ProductsService {
     /*список всех кают корабеля*/
     getListTable(): Observable<Product[]> {
         return this.http.get<Product[]>(
-            restServer + 'products/getListTable',
+            restServer + 'admin_api/products/getListTable',
             {})
             .pipe();
     }
@@ -59,7 +59,7 @@ export class ProductsService {
     /*список всех кают корабеля*/
     get(id: number): Observable<Product> {
         return this.http.post<Product>(
-            restServer + 'products/get',
+            restServer + 'admin_api/products/get',
             {
                 id: id
             })
@@ -69,7 +69,7 @@ export class ProductsService {
     /*список категорий продукта*/
     getCategories(id: number): Observable<ProductCategories[]> {
         return this.http.post<ProductCategories[]>(
-            restServer + 'products/getCategories',
+            restServer + 'admin_api/products/getCategories',
             {
                 id: id
             })
@@ -79,14 +79,14 @@ export class ProductsService {
     /*список всех кают корабеля*/
     add(product: Product): Observable<JSON> {
         return this.http.post<JSON>(
-            restServer + 'products/add', product)
+            restServer + 'admin_api/products/add', product)
             .pipe();
     }
 
     /*список всех кают корабеля*/
     update(product: Product): Observable<JSON> {
         return this.http.post<JSON>(
-            restServer + 'products/update', product)
+            restServer + 'admin_api/products/update', product)
             .pipe();
     }
 

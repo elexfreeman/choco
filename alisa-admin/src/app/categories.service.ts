@@ -32,7 +32,7 @@ export class CategoriesService {
     /*список всех кают корабеля*/
     getCategories(): Observable<Category[]> {
         return this.http.get<Category[]>(
-            restServer + 'categories/getAll',
+            restServer + 'admin_api/categories/getAll',
             {})
             .pipe();
     }
@@ -40,7 +40,7 @@ export class CategoriesService {
     /*список всех кают корабеля*/
     getCategory(categoryId: number): Observable<Category> {
         return this.http.post<Category>(
-            restServer + 'categories/get',
+            restServer + 'admin_api/categories/get',
             {
                 id: categoryId
             })
@@ -50,14 +50,14 @@ export class CategoriesService {
     /*список всех кают корабеля*/
     addCategory(category: Category): Observable<JSON> {
         return this.http.post<JSON>(
-            restServer + 'categories/add', category)
+            restServer + 'admin_api/categories/add', category)
             .pipe();
     }
 
     /*список всех кают корабеля*/
     updateCategory(category: Category): Observable<JSON> {
         return this.http.post<JSON>(
-            restServer + 'categories/update', category)
+            restServer + 'admin_api/categories/update', category)
             .pipe();
     }
 
