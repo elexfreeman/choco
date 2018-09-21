@@ -94,10 +94,10 @@ let admin_products = require('./admin/products/routes');
 let admin_manufacturer = require('./admin/manufacturer/routes');
 let imgUploader = require('./admin/imgUploader');
 
-app.use('/admin/categories/', admin_categories);
-app.use('/admin/products/', admin_products);
-app.use('/admin/manufacturer/', admin_manufacturer);
-app.use('/admin/imgUploader/', imgUploader);
+app.use('/admin_api/categories/', admin_categories);
+app.use('/admin_api/products/', admin_products);
+app.use('/admin_api/manufacturer/', admin_manufacturer);
+app.use('/admin_api/imgUploader/', imgUploader);
 
 
 let product = require('./app/pages/product');
