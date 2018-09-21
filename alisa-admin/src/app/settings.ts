@@ -1,4 +1,4 @@
-export const restServer =  'http://likechoco.com/admin_api/';
+export const restServer =  'http://likechoco.com/';
 
 
 
