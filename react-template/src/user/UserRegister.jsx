@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {onUpdateUserData} from '../redux/actions/userInfo';
+import {generateSmsPass, login} from '../models/login_model';
 
 /*регистрация пользователя*/
 class UserRegister extends Component {
@@ -17,6 +18,8 @@ class UserRegister extends Component {
                 , avatar: ''
                 , phone: ''
                 , photo: null
+                , showPassInput: false
+                , pass: ''
             };
         } else {
             this.state = {
@@ -27,31 +30,52 @@ class UserRegister extends Component {
                 , avatar: props.userInfoReducer.avatar
                 , phone: props.userInfoReducer.phone
                 , photo: null
+
             };
         }
 
         this.onChangeB = this.onChangeB.bind(this);
+        this.OnGenerateSmsPass = this.OnGenerateSmsPass.bind(this);
+        this.OnLogin = this.OnLogin.bind(this);
 
     }
 
 
     onChangeB(e) {
-        this.setState({[e.target.name]: e.target.value})
+        if (e.target.name === 'u_name') {
+            this.setState({'u_name': e.target.value})
+        } else {
+            this.setState({[e.target.name]: e.target.value})
+        }
+
     }
 
     /*орабатывает при монтировании компонента*/
     componentDidMount() {
-
-        if ( window.localStorage.getItem('cart')!=null) {
+        if (window.localStorage.getItem('cart') != null) {
             document.getElementById('u_name').value = this.state.name;
-            document.getElementById('u_phone').value = this.state.phone;
+            document.getElementById('phone').value = this.state.phone;
         }
+    }
+
+    OnGenerateSmsPass(e) {
+        generateSmsPass(this.state.phone).then(resp => {
+            console.log(resp);
+        }).catch(e => console.log(e));
+        this.setState({showPassInput: true})
+    }
+
+    OnLogin(e) {
+        login(this.state.phone, this.state.pass).then(resp => {
+            localStorage.setItem('apiKey', resp.user.apiKey);
+            document.location.replace('/user/cart');
+        }).catch(e => console.log(e));
     }
 
     render() {
         return (
             <div>
-                {window.localStorage.getItem('cart')!=null && (
+                {window.localStorage.getItem('cart') != null && (
                     <div className='user-register'>
                         <h4>Контактные данные</h4>
                         <div className='columns'>
@@ -62,7 +86,13 @@ class UserRegister extends Component {
                                             <label className="form-label">Ваше имя</label>
                                         </div>
                                         <div className="col-9 col-sm-12">
-                                            <input disabled id='u_name' className="form-input" type="text"/>
+                                            <input disabled={this.props.isRegistered}
+                                                   onChange={this.onChangeB}
+                                                   id='u_name'
+                                                   name='u_name'
+
+                                                   className="form-input"
+                                                   type="text"/>
                                         </div>
                                     </div>
                                     <div className="form-group">
@@ -70,9 +100,70 @@ class UserRegister extends Component {
                                             <label className="form-label">Телефон</label>
                                         </div>
                                         <div className="col-9 col-sm-12">
-                                            <input disabled id='u_phone' className="form-input" type="text"
+                                            <input disabled={this.props.isRegistered}
+                                                   onChange={this.onChangeB}
+                                                   id='phone'
+                                                   name='phone'
+                                                   className="form-input" type="text"
                                                    placeholder="+7.."/>
                                         </div>
+                                    </div>
+                                    <div className="form-group">
+
+                                        {!this.props.isRegistered && (
+                                            <div>
+                                                {this.state.showPassInput ? (
+                                                    <div>
+                                                        <div className="form-group">
+                                                            <div className="col-3 col-sm-12">
+                                                                <label className="form-label">Введите код из SMS</label>
+                                                            </div>
+                                                            <div className="col-3 col-sm-12">
+                                                                <input disabled={this.props.isRegistered}
+                                                                       onChange={this.onChangeB}
+                                                                       className="form-input"
+                                                                       name="pass" type="text" id="pass"
+                                                                       placeholder=". . . ."/>
+                                                            </div>
+                                                        </div>
+                                                        <div className="form-group">
+                                                            <div className="col-6 col-sm-12">
+                                                                Нажимая кнопку "Регистрация"
+                                                                вы соглашаетесь с <a href='/agreement' target='_blank'>условиями
+                                                                соглашения</a>
+                                                            </div>
+                                                            <div className="col-6 col-sm-12 text-right">
+                                                                <button
+                                                                    onClick={this.OnGenerateSmsPass}
+                                                                    className="btn btn-link">Повтор SMS
+                                                                </button>
+                                                                <button
+                                                                    onClick={this.OnLogin}
+                                                                    className="btn btn-success">Регистрация
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <div className="form-group">
+                                                        <div className="col-9 col-sm-12">
+                                                            Нажимая кнопку "Регистрация"
+                                                            вы соглашаетесь с <a href='/agreement' target='_blank'>условиями
+                                                            соглашения</a>
+                                                        </div>
+                                                        <div className="col-3 col-sm-12 text-right">
+                                                            <button
+                                                                onClick={this.OnGenerateSmsPass}
+                                                                disabled={this.props.isRegistered}
+                                                                className="btn btn-success">Регистрация
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                )}
+
+
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>

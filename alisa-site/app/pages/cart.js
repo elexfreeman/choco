@@ -5,6 +5,8 @@ const CartModel = require('../models/cart_model');
 const left_menu = require('../../models/left_menu');
 const SeoModel = require("../models/seo_model");
 
+const ver = require("../../ver");
+
 /* GET home page. */
 router.post('/get', function (req, res, next) {
 
@@ -52,40 +54,41 @@ router.post('/get', function (req, res, next) {
 });
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', async function (req, res, next) {
 
-
-    let Url = req.baseUrl.replace('\\', '');
-    Url = Url.replace('/', '');
+    /*категории*/
     let categories = [];
-
+    /*популярные*/
+    let products_popular = [];
+    /*новые*/
+    let products_new = [];
+    /*акции*/
+    let discont = [];
+    let manufacturer = [];
     let seo_call = {};
 
-
-    left_menu().then(c => {
-        categories = c;
-        return SeoModel.Get('cart');
-    }).then(seo => {
-        console.log(seo);
-        seo_call = seo;
-        res.render('cart_page/index', {
-            seo: seo
+    try {
+        categories = await left_menu();
+        products_popular = await Products.getPopular();
+        products_new = await Products.getByCategoryId(11, 10);
+        discont = await Products.getDiscont(5);
+        seo_call = await SeoModel.Get('main');
+    } catch (e) {
+        console.log(e);
+    } finally {
+        res.render('cart_page/index.ejs', {
+            seo: seo_call
+            , base: '/'
+            ,ver: ver
             , categories: categories
-            , manufacturer: []
-            , discont: []
-            , base_href: 'cart'
+            , products_new: products_new
+            , products_popular: products_popular
+            , discont: discont
+            , manufacturer: manufacturer
         });
+    }
 
-    }).catch(e => {
-        res.json({
-            'error': 1, 'e': e, stack: {
-                seo: seo_call
-                , categories: categories
-                , Url: Url
-                , base_href: 'cart'
-            }
-        });
-    });
+
 
 });
 

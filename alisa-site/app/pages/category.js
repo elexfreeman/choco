@@ -1,11 +1,12 @@
-let express = require('express');
-let router = express.Router();
-let Categories = require('../../models/categories');
-let left_menu = require('../../models/left_menu');
-let Products = require('../../models/products');
+const express = require('express');
+const router = express.Router();
+const Categories = require('../../models/categories');
+const left_menu = require('../../models/left_menu');
+const Products = require('../../models/products');
 const SeoModel = require("../models/seo_model");
+const ver = require("../../ver");
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', async function (req, res, next) {
 
     let Url = req.baseUrl.replace('\\', '');
     Url = Url.replace('/', '');
@@ -25,57 +26,32 @@ router.get('/', function (req, res, next) {
     let manufacturer = [];
 
     let seo_call = {};
+    try {
 
-
-    left_menu().then((c) => {
-        categories = c;
-        return Products.getPopular();
-
-    }).then((popProducts) => {
-        products_popular = popProducts;
-        return Products.getByCategoryId(11, 10);
-    }).then(resp => {
-        products_new = resp;
-        return Products.getDiscont(5);
-    }).then(resp => {
-        discont = resp;
-        return Categories.getCategoryByUrl(Url);
-        //
-    }).then(resp => {
-        category = resp;
-        return Categories.getProducts(Url);
-
-    }).then(resp => {
-
-        category.products = resp;
-        return SeoModel.Get('category');
-
-
-    }).then(seo => {
-        seo_call = seo;
+        categories = await left_menu();
+        products_popular = await Products.getPopular();
+        products_new = await Products.getDiscont(5);
+        discont = await Products.getDiscont(5);
+        category = await Categories.getProducts(Url);
+        category.products = await Categories.getProducts(Url);
+        seo_call = await SeoModel.Get('category');
+    } catch (e) {
+        console.log(e);
+    } finally {
         res.render('category_page/index', {
             seo: seo_call
+            , base: '/'
+            ,ver: ver
             , categories: categories
-            , category : category
+            , category: category
             , products_new: products_new
             , products_popular: products_popular
             , discont: discont
             , Url: Url
             , manufacturer: manufacturer
+
         });
-    }).catch(e => {
-        res.render('category_page/index', {
-            seo: seo_call
-            , categories: categories
-            , category : category
-            , products_new: products_new
-            , products_popular: products_popular
-            , discont: discont
-            , Url: Url
-            , manufacturer: manufacturer
-            , e: e
-        });
-    });
+    }
 
 });
 

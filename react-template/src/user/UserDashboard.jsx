@@ -6,6 +6,7 @@ import {bindActionCreators} from "redux";
 import {onUpdateUserData} from '../redux/actions/userInfo';
 import NavLink from "react-router-dom/es/NavLink";
 import {rest_server} from '../models/settings';
+import {url_pref} from "../models/url_pref";
 import UserMenu from "./UserMenu";
 
 // кнопка корзины в главном меню
@@ -46,7 +47,8 @@ class UserDashboard extends Component {
                                     <p>{this.props.userInfoReducer.email}</p>
                                 </div>
                                 <div className="column col-3 col-sm-12 text-right">
-                                    <NavLink className="btn btn-primary btn-lg" to={'/edit_profile'}>
+                                    <NavLink className="btn btn-primary btn-lg"
+                                             to={url_pref().url_prifix + 'edit_profile'}>
                                         <i className="icon icon-edit"></i>
                                     </NavLink>
                                 </div>

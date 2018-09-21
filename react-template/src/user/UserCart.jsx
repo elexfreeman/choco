@@ -12,7 +12,7 @@ import {OrderModel} from "../models/order_model";
 import DeliveryComponent from "../CartComponent/DeliveryComponent";
 import {bindActionCreators} from "redux";
 
-import  {onClear} from "../redux/actions/cart";
+import {onClear} from "../redux/actions/cart";
 
 class UserCart extends Component {
 
@@ -20,23 +20,34 @@ class UserCart extends Component {
         super(props);
         this.state = {
             delivery: ''
+            , delivery_error: false
+            ,isRegistered: props.isLK
         };
         this.onCheckout = this.onCheckout.bind(this);
+        this.onChangeRegistered = this.onChangeRegistered.bind(this);
+    }
 
+    onChangeRegistered(e){
+        this.setState({isRegistered: e});
     }
 
     async onCheckout(e) {
         console.log(this.props);
         if (this.props.isLK) {
-            let order = {
-                delivery_address: this.state.delivery,
-                comment: '',
-                products: this.props.cart
-            };
+            if (this.state.delivery.length > 3) {
+                let order = {
+                    delivery_address: this.state.delivery,
+                    comment: '',
+                    products: this.props.cart
+                };
 
-            let resp = await OrderModel.Create(order, new XMLHttpRequest());
-            this.props.onClear();
-            this.props.history.push('/order/'+resp.order_id);
+                let resp = await OrderModel.Create(order, new XMLHttpRequest());
+                this.props.onClear();
+                this.props.history.push('/order/' + resp.order_id);
+            } else {
+                this.setState({delivery_error: true});
+            }
+
         } else {
             /*регистрация юзера пото все остальное*/
         }
@@ -60,11 +71,15 @@ class UserCart extends Component {
                             {this.props.cart.length > 0 ? (
                                 <div>
                                     <CartComponent/>
-                                    <DeliveryComponent onChange={(d) => this.setState({delivery: d})}/>
-                                    <UserRegister/>
-
-                                    <CartComplete checkout={this.onCheckout}/>
-
+                                    <DeliveryComponent
+                                        delivery_error={this.state.delivery_error}
+                                        onChange={d => this.setState({delivery: d, delivery_error: false})}/>
+                                    <UserRegister
+                                        onChangeRegistered={this.onChangeRegistered}
+                                        isRegistered={this.state.isRegistered}/>
+                                    <CartComplete
+                                        isRegistered={this.state.isRegistered}
+                                        checkout={this.onCheckout}/>
                                 </div>
                             ) : (
                                 <div>
@@ -79,8 +94,12 @@ class UserCart extends Component {
                             <div>
                                 <CartComponent/>
                                 <DeliveryComponent/>
-                                <UserRegister/>
-                                <CartComplete checkout={this.onCheckout}/>
+                                <UserRegister
+                                    onChangeRegistered={this.onChangeRegistered}
+                                    isRegistered={this.state.isRegistered}/>
+                                <CartComplete
+                                    isRegistered={this.state.isRegistered}
+                                    checkout={this.onCheckout}/>
                             </div>
                         ) : (
                             <div>

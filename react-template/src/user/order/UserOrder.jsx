@@ -6,6 +6,7 @@ import UserOrderBread from "./UserOrderBread";
 import {rest_server} from "../../models/settings";
 import {pricePipe} from "../../base/pipes/price_pipe";
 import UserOrderStatus from "../orders/UserOrderStatus";
+import UserMenu from "../UserMenu";
 
 // кнопка корзины в главном меню
 class UserOrder extends Component {
@@ -36,24 +37,7 @@ class UserOrder extends Component {
         return (
             <div>
                 <div className="columns">
-                    <div className="col-menu-left column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-3">
-                        <div className="menu-left">
-                            <div className="head">Личный кабинет</div>
-                            <div className="menu">
-                                <div className="item">
-                                    <a href="/">На главную</a></div>
-                                <div className="item">
-                                    <Link aria-current="true" to="/">Заказы</Link>
-                                </div>
-                                <div className="item">
-                                    <Link aria-current="false" to="/cart">Корзина</Link>
-                                </div>
-                                <div className="item">
-                                    <a>Выход</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <UserMenu/>
                     {this.state.order && (
                         <div
                             className="user-dashboard column col-xs-12 col-md-12 col-sm-12 col-lg-8 col-xl-8 col-9">

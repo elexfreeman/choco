@@ -74,6 +74,7 @@ app.use('/login_api', login_api);
 
 let user = require('./app/pages/user');
 app.use('/user', user);
+app.use('/user/*', user);
 
 let user_api = require('./app/api/user_api');
 app.use('/user_api', user_api);
@@ -84,6 +85,7 @@ app.use('/about', about);
 
 let admin = require('./app/pages/adm');
 app.use('/admin', admin);
+app.use('/admin/*', admin);
 
 /*admin*/
 let users = require('./routes/users');

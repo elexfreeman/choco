@@ -4,9 +4,9 @@ const router = express.Router();
 const left_menu = require('../../models/left_menu');
 const Products = require('../../models/products');
 const SeoModel = require('../models/seo_model');
-
+const ver = require("../../ver");
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', async function (req, res, next) {
 
     let Url = req.baseUrl.replace('\\', '');
     Url = Url.replace('/', '');
@@ -20,30 +20,28 @@ router.get('/', function (req, res, next) {
     let discont = [];
     let manufacturer = [];
     let seo_call = {};
+    let product = {};
 
-    left_menu().then((c) => {
-        categories = c;
-        return Products.getPopular();
+    try {
+        categories = await left_menu();
+        products_popular = await Products.getPopular();
+        products_new = await Products.getByCategoryId(11, 10);
+        discont = await Products.getDiscont(5);
+        seo_call = await SeoModel.Get('main');
+        product = Products.getByUrl(Url);
 
-    }).then((popProducts) => {
-        products_popular = popProducts;
-        return Products.getByCategoryId(11, 10);
-    }).then(resp => {
-        products_new = resp;
-        return Products.getDiscont(5);
-    }).then(resp => {
-        discont = resp;
-        return SeoModel.Get('product');
-    }).then(seo => {
-        seo_call = seo;
-        return Products.getByUrl(Url);
-    }).then(product => {
-
-        if (typeof product.description === 'string')
+        if (typeof product.description === 'string') {
             product.description = product.description.replace(/\r\n|\r|\n/g, "<br />");
+        }
+
+    } catch (e) {
+        console.log(e);
+    } finally {
 
         res.render('product_page/index', {
             seo: seo_call
+            , base: '/'
+            ,ver: ver
             , product: product
             , categories: categories
             , products_new: products_new
@@ -52,19 +50,7 @@ router.get('/', function (req, res, next) {
             , Url: Url
             , manufacturer: manufacturer
         });
-
-    }).catch(e => {
-        res.render('product_page/index', {
-            seo_call: seo_call
-            , product: product
-            , categories: categories
-            , products_new: products_new
-            , products_popular: products_popular
-            , discont: discont
-            , Url: Url
-            , manufacturer: manufacturer
-        });
-    });
+    }
 
 });
 

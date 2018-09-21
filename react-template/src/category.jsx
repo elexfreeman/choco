@@ -6,7 +6,7 @@ import ProductOrderCategory from './cart/ProductOrderCategory';
 
 import store from './redux/store';
 
-import './styles/main.scss';
+
 import {onGetCart} from "./redux/actions/cart";
 // Корзина
 /*загружаем ее*/

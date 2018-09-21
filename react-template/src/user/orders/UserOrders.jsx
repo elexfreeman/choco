@@ -7,7 +7,7 @@ import {mysqlDatePipe} from "../../base/pipes/date_pipe";
 import {pricePipe} from "../../base/pipes/price_pipe";
 import UserOrderStatus from "./UserOrderStatus";
 import {Link} from "react-router-dom";
-
+import {url_pref} from "../../models/url_pref";
 
 // кнопка корзины в главном меню
 class UserOrders extends Component {
@@ -44,7 +44,7 @@ class UserOrders extends Component {
             <div className="container orders-container">
                 {this.state.orders.map((order, key) =>
                     <div key={order.id}>
-                        <Link to={'/order/'+order.id}>
+                        <Link to={url_pref().url_prifix + 'order/'+order.id}>
                             <div className="columns">
                                 <div className="column col-1 col-md-12">
                                     № <b>{order.id}</b><br/>от {mysqlDatePipe(order.date)}

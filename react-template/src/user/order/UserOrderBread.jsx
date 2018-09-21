@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-
+import {url_pref} from "../../models/url_pref";
 const UserOrderBread = ({}) => {
 
 
@@ -9,7 +9,7 @@ const UserOrderBread = ({}) => {
             <a href="/">Главная</a>
         </li>
         <li className="breadcrumb-item">
-            <Link className="active" aria-current="true" to="/">
+            <Link className="active" aria-current="true" to={url_pref().url_main}>
                 Личный кабинет
             </Link>
         </li>

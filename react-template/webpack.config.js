@@ -35,41 +35,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loaders: ["babel-loader"]
-      },
-      {
-        test: /\.scss$/,
-        // loader: ExtractTextPlugin.extract('style-loader', 'css-loader!resolve-url!sass-loader?sourceMap')
-        loader: ExtractTextPlugin.extract('css!sass')
-      },
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
-      },
-      {
-        test: /\.eot(\?v=\d+.\d+.\d+)?$/,
-        loader: 'file-loader'
-      },
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-      },
-      {
-        test: /\.[ot]tf(\?v=\d+.\d+.\d+)?$/,
-        loader: 'file-loader?limit=10000&mimetype=application/octet-stream'
-      },
-      {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader?limit=10000&mimetype=image/svg+xml'
-      },
-      {
-        test: /\.(jpe?g|png|gif)$/i,
-        loader: 'file-loader?name=[name].[ext]'
-      },
-      {
-        test: /\.ico$/,
-        loader: 'file-loader?name=[name].[ext]'
-      },
-
+      }
     ],
     rules: [{
         test: /\.js?$/,
@@ -81,24 +47,8 @@ module.exports = {
         use: ['babel-loader', ],
         exclude: /node_modules/
       },
-      {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ["css-loader?-minimize", 'sass-loader']
-        })
-      },
-      {
-        test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'fonts/',    // where the fonts will go
-            publicPath: '../'       // override the default path
-          }
-        }]
-      }
+
+
     ]
   },
 

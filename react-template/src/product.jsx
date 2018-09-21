@@ -2,7 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import {Provider} from 'react-redux';
 
-import ProductControler from './controlers/ProductControler';
+/*import ProductControler from './controlers/ProductControler';*/
 
 import ProductOrder from './cart/ProductOrder';
 import CartButton from './cart/CartButton';
@@ -10,7 +10,7 @@ import ProductOrderCategory from './cart/ProductOrderCategory';
 
 import store from './redux/store';
 
-import './styles/main.scss';
+
 import {onGetCart} from "./redux/actions/cart";
 
 // Корзина

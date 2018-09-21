@@ -3,7 +3,10 @@ let cart = [];
 
 function init() {
     let tmp = window.localStorage.getItem('cart');
-    if (tmp == null) return {};
+    if (tmp == null) {
+        cart = [];
+        window.localStorage.setItem('cart', JSON.stringify(cart))
+    }
     cart = JSON.parse(tmp);
     console.log('Cart class');
 }

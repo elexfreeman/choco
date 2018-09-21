@@ -3,6 +3,7 @@ let router = express.Router();
 let Categories = require('../../models/categories');
 let left_menu = require('../../models/left_menu');
 let Products = require('../../models/products');
+const ver = require("../../ver");
 /* GET home page. */
 router.get('/', function (req, res, next) {
 
@@ -51,7 +52,8 @@ router.get('/', function (req, res, next) {
 
         res.render('category_page/index', {
             title: title,
-            description: description,
+            description: description
+            ,ver: ver,
             keywords: keywords,
             category: category,
             categories: categories

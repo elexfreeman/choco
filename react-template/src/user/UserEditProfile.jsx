@@ -7,6 +7,7 @@ import {bindActionCreators} from "redux";
 import {onUpdateUserData} from '../redux/actions/userInfo';
 import NavLink from "react-router-dom/es/NavLink";
 import UserMenu from "./UserMenu";
+import {url_pref} from "../models/url_pref";
 
 /*редактирование персональных данных*/
 class UserEditProfile extends Component {
@@ -185,7 +186,7 @@ class UserEditProfile extends Component {
 
                                 </div>
                                 <div className="column col-3 col-sm-12 text-right">
-                                    <NavLink className="btn btn-primary btn-lg" to={'/'}>
+                                    <NavLink className="btn btn-primary btn-lg" to={url_pref().url_main}>
                                         <i className="icon icon-cross"></i>
                                     </NavLink>
                                 </div>

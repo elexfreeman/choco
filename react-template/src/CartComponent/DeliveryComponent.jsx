@@ -30,7 +30,7 @@ class DeliveryComponent extends Component {
 
         return (<div className='delivery'>
           <h4>Доставка</h4>
-            <div className="form-group">
+            <div className={this.props.delivery_error ? ("form-group has-error") :("form-group")}>
                 <label className="form-label" >Адрес доставки</label>
                 <input onChange={this.onChangeAddress}
                        placeholder='индекс, город, улица, дом'

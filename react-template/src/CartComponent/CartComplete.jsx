@@ -26,7 +26,7 @@ class CartComplete extends Component {
                                     соглашения</a>
                                 </div>
                                 <div className="column col-xs-4 text-right">
-                                    <button onClick={this.props.checkout} className="btn btn-success">Оформить заказ</button>
+                                    <button disabled={!this.props.isRegistered} onClick={this.props.checkout} className="btn btn-success">Оформить заказ</button>
                                 </div>
                             </div>
                         </div>
