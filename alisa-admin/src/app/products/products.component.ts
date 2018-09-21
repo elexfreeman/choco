@@ -37,7 +37,7 @@ export class ProductsComponent implements OnInit {
             ajax: (dataTablesParameters: any, callback) => {
                 that.http
                     .post<DataTablesResponse>(
-                        restServer + 'admin/products/getListTable',
+                        restServer + 'products/getListTable',
                         dataTablesParameters, {}
                     ).subscribe(resp => {
                     console.log(resp);
