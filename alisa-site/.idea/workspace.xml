@@ -21,11 +21,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="category.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="category.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pages/category.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="40" column="23" lean-forward="true" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+            <state relative-caret-position="399">
+              <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image_resize_model.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/image_resize_model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,15 +74,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="735">
               <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main_page.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/pages/main_page.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="37" column="30" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -172,7 +175,6 @@
         <option value="$PROJECT_DIR$/app/models/seo_model.js" />
         <option value="$PROJECT_DIR$/app/api/image_resize.js" />
         <option value="$PROJECT_DIR$/settings.js" />
-        <option value="$PROJECT_DIR$/app/models/image_resize_model.js" />
         <option value="$PROJECT_DIR$/app/api/image_resize_1024.js" />
         <option value="$PROJECT_DIR$/app/api/image_resize_128.js" />
         <option value="$PROJECT_DIR$/app/api/image_resize_512.js" />
@@ -181,6 +183,7 @@
         <option value="$PROJECT_DIR$/views/main_page/index.ejs" />
         <option value="$PROJECT_DIR$/views/category_page/index.ejs" />
         <option value="$PROJECT_DIR$/app/pages/category.js" />
+        <option value="$PROJECT_DIR$/app/models/image_resize_model.js" />
       </list>
     </option>
   </component>
@@ -246,6 +249,12 @@
               <item name="alisa-site" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="alisa-site" type="b2602c69:ProjectViewProjectNode" />
+              <item name="alisa-site" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="alisa-site" type="b2602c69:ProjectViewProjectNode" />
@@ -447,7 +456,7 @@
       <workItem from="1537429834144" duration="9966000" />
       <workItem from="1537470139731" duration="2777000" />
       <workItem from="1537512689308" duration="15557000" />
-      <workItem from="1537604448120" duration="12483000" />
+      <workItem from="1537604448120" duration="12781000" />
     </task>
     <task id="LOCAL-00001" summary="product page">
       <created>1521668784482</created>
@@ -460,7 +469,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198686000" />
+    <option name="totallyTimeSpent" value="198984000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -483,6 +492,7 @@
       <window_info id="npm" order="1" sideWeight="0.5013123" side_tool="true" weight="0.15458423" />
       <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.49733475" visible="true" weight="0.20331492" />
       <window_info anchor="right" id="Remote Host" order="1" visible="true" weight="0.12526652" />
+      <window_info anchor="bottom" id="TypeScript" />
       <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49868765" visible="true" weight="0.17643923" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="0" />
@@ -542,13 +552,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="product page" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/user_model_tests.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/user/userInfo.js" />
     <entry file="file://$PROJECT_DIR$/admin/imgUploader.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -799,16 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/image_resize_model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1301">
-          <caret line="55" column="57" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/about.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -877,8 +870,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/category.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="40" column="23" lean-forward="true" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+        <state relative-caret-position="399">
+          <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jimp/jimp.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="543" column="20" selection-start-line="543" selection-start-column="16" selection-end-line="543" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/image_resize_model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
