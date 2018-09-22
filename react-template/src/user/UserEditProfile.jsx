@@ -32,14 +32,14 @@ class UserEditProfile extends Component {
 
 
     onChangeB(e) {
-        this.setState({[e.target.name]: e.target.value}, () => console.log(this.state));
+        this.setState({[e.target.name]: e.target.value});
     }
 
     onUpdate(e) {
         this.doUpdate().then(() => {
             /*обновлем инфу в редаксе*/
             this.props.onUpdateUserData();
-            this.props.history.push('/');
+            this.props.history.push(url_pref().url_main);
         })
     }
 

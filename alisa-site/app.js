@@ -45,6 +45,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 /*site routers*/
 /*-------------------*/
 
+/*размеры картинок*/
+let image_resize_512 = require('./app/api/image_resize_512');
+app.use('/img/w512/*', image_resize_512);
+
+/*размеры картинок*/
+let image_resize_128 = require('./app/api/image_resize_128');
+app.use('/img/w128/*', image_resize_128);
+
+/*размеры картинок*/
+let image_resize_1024 = require('./app/api/image_resize_1024');
+app.use('/img/w1024/*', image_resize_1024);
+
 let index = require('./app/pages/main_page');
 app.use('/', index);
 
