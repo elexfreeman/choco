@@ -33,8 +33,8 @@ class ImageResize {
 
             /*ресайзим*/
             const image = await jimp.read(upload_path + filename);
-            await image.quality(60);
             await image.resize(parseInt(w), jimp.AUTO);
+            await image.quality(60);
 
             /*записываем*/
             const out_img = r_path + name + '_x' + w + 'w' + ext;
