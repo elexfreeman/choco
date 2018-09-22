@@ -34,7 +34,7 @@ router.get('/', async function (req, res, next) {
         products_popular = await Products.getPopular();
         products_new = await Products.getDiscont(5);
         discont = await Products.getDiscont(5);
-        category = await Categories.getProducts(Url);
+        category = await Categories.getCategoryByUrl(Url);
         category.products = await Categories.getProducts(Url);
         seo_call = await SeoModel.Get('category');
     } catch (e) {
