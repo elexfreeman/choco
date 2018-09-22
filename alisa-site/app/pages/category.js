@@ -26,6 +26,8 @@ router.get('/', async function (req, res, next) {
     let manufacturer = [];
 
     let seo_call = {};
+
+
     try {
 
         categories = await left_menu();

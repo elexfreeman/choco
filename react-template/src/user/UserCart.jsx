@@ -13,21 +13,22 @@ import DeliveryComponent from "../CartComponent/DeliveryComponent";
 import {bindActionCreators} from "redux";
 
 import {onClear} from "../redux/actions/cart";
+import {url_pref} from "../models/url_pref";
 
 class UserCart extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            delivery: ''
+            delivery: localStorage.getItem('delivery_address')
             , delivery_error: false
-            ,isRegistered: props.isLK
+            , isRegistered: props.isLK
         };
         this.onCheckout = this.onCheckout.bind(this);
         this.onChangeRegistered = this.onChangeRegistered.bind(this);
     }
 
-    onChangeRegistered(e){
+    onChangeRegistered(e) {
         this.setState({isRegistered: e});
     }
 
@@ -43,7 +44,7 @@ class UserCart extends Component {
 
                 let resp = await OrderModel.Create(order, new XMLHttpRequest());
                 this.props.onClear();
-                this.props.history.push('/order/' + resp.order_id);
+                this.props.history.push(url_pref().url_prifix + 'order/' + resp.order_id);
             } else {
                 this.setState({delivery_error: true});
             }
