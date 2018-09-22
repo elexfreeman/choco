@@ -41,7 +41,13 @@ export class ProductsComponent implements OnInit {
                         dataTablesParameters, {}
                     ).subscribe(resp => {
                     console.log(resp);
-                    that.products = resp.data;
+
+
+                    that.products = resp.data.map(item => {
+                        item.main_img = item.main_img.split('/');
+                        item.main_img = 'img/w128/' + item.main_img[item.main_img.length - 1];
+                        return item;
+                    });
 
                     callback({
                         recordsTotal: resp.recordsTotal,
