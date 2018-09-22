@@ -38,9 +38,9 @@ export class CategoriesAddComponent implements OnInit {
         this.options = {
             thumbnailHeight: 200,
             thumbnailWidth: 200,
-            uploadUrl: this.rest + 'admin/imgUploader',
+            uploadUrl: this.rest + 'admin_api/imgUploader',
             allowedImageTypes: ['image/png', 'image/jpeg'],
-            maxImageSize: 3
+            maxImageSize: 5
         };
     }
 
