@@ -60,8 +60,8 @@
       <file leaf-file-name="index.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/category_page/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="105">
+              <caret line="5" column="56" lean-forward="true" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -412,7 +412,7 @@
       <workItem from="1537429834144" duration="9966000" />
       <workItem from="1537470139731" duration="2777000" />
       <workItem from="1537512689308" duration="15557000" />
-      <workItem from="1537604448120" duration="12254000" />
+      <workItem from="1537604448120" duration="12368000" />
     </task>
     <task id="LOCAL-00001" summary="product page">
       <created>1521668784482</created>
@@ -425,7 +425,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198457000" />
+    <option name="totallyTimeSpent" value="198571000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -839,8 +839,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/category_page/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="105">
+          <caret line="5" column="56" lean-forward="true" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
