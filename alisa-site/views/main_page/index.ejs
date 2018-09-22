@@ -82,8 +82,8 @@
                                     <a href='/category/<%= c.url %>'>
                                         <div class="card-image">
                                             <img class="img-responsive"
-                                                 src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg"
-                                                 alt="OS X El Capitan"></div>
+                                                 src="<%= c.url.split('/')[c.url.length-1] %>"
+                                                 alt="<%= c.caption %>"></div>
                                         <div class="card-header">
                                             <div class="card-title h5"><%= c.caption %></div>
                                         </div>
@@ -111,8 +111,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="base-head">Новые поступления</div>
-                    <div class="columns products"></div>
+                    <div class="base-head">Популярные</div>
+                    <% include ../components/products_popular %>
                 </div>
                 <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-1 col-xl-1 col-1"></div>
             </div>
