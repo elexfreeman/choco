@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const router = express.Router();
 const ImageResize = require('../models/image_resize_model');
-
+const Settings = require('../../settings');
 /*создает заказ*/
 router.get('/', async (req, res, next) => {
     console.log(__dirname);
@@ -14,7 +14,7 @@ router.get('/', async (req, res, next) => {
 
     try {
         let image = await ImageResize.Rx512w(img);
-        let f = await fs.readFileSync(__dirname + "../../../public/" + image);
+        let f = await fs.readFileSync(Settings.AppPath() + "/public/" + image);
         res.writeHead(200, {'Content-Type': 'image/jpeg' });
         res.end(f, 'binary');
     } catch (e) {

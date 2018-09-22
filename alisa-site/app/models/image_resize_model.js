@@ -3,7 +3,9 @@ const jimp = require('jimp');
 const path = require('path');
 const fs = require('fs');
 
-const upload_path = "./public/images/uploadimg/";
+const Settings = require('../../settings');
+
+const upload_path = Settings.AppPath() +"/public/images/uploadimg/";
 
 class ImageResize {
 
@@ -136,12 +138,7 @@ if (module.parent) {
     module.exports = ImageResize;
 } else {
 
-    console.log(fs.existsSync(upload_path));
-
-    ImageResize.Rx512w('_H8DqTMabysskey.jpg').then(e => {
-        console.log(e)
-
-    }).catch(e => console.log(e));
+   console.log(Settings.AppPath());
 
 
 }
