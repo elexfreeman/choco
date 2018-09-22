@@ -1,5 +1,4 @@
 /*модуль змеения размера картики по урлу*/
-const im = require('imagemagick');
 const jimp = require('jimp');
 const path = require('path');
 const fs = require('fs');
