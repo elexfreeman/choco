@@ -1,0 +1,36 @@
+<% include ../base/head %>
+<% include ../components/menu/menu_top %>
+
+<div class="main-page">
+    <div class="center-container-wrap-g">
+        <div class="container grid-xl center-container">
+            <div class="columns">
+                <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-3">
+                    <% include ../components/menu/menu_left %>
+                </div>
+                <div class="column col-xs-12 col-md-12 col-sm-12 col-lg-8 col-xl-8 col-9">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/">Главная</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a class="active" aria-current="true" href="/">
+                                Каталог
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="category-cover"></div>
+                    <div id="catalog">
+                        <% include ./products %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <% include ../base/footer %>
+</div>
+<script type="text/javascript" src="/js/common.js?v=<%= ver %>" charset="utf-8"></script>
+<script type="text/javascript" src="/js/catalog.js?v=<%= ver %>" charset="utf-8"></script>
+
+<% include ../base/bottom %>

@@ -8,6 +8,7 @@ module.exports = {
     bundle: './index.jsx'
     ,product: './product.jsx'
     ,category: './category.jsx'
+    ,catalog: './catalog.jsx'
     ,cart: './cart.jsx'
     ,manufacturer: './manufacturer.jsx'
     ,category_page: './category_page.jsx'

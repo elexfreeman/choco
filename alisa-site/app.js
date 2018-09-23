@@ -63,6 +63,9 @@ app.use('/', index);
 let category = require('./app/pages/category');
 app.use('/category/*', category);
 
+let catalog = require('./app/pages/catalog');
+app.use('/catalog', catalog);
+
 
 let cart = require('./app/pages/cart');
 app.use('/cart', cart);
@@ -70,6 +73,10 @@ app.use('/cart', cart);
 
 let cart_api = require('./app/api/cart_api');
 app.use('/cart_api', cart_api);
+
+
+let products_api = require('./app/api/products_api');
+app.use('/products_api', products_api);
 
 
 let order_api = require('./app/api/order_api');

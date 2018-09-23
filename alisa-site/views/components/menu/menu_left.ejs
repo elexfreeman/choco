@@ -1,6 +1,10 @@
 <div class="menu-left">
     <div class="head">Категории</div>
     <div class="menu">
+        <div class="item">
+            <a href='/catalog'><i class="fa fa-list-alt " aria-hidden="true"></i> Каталог</a>
+        </div>
+
         <% categories.forEach(function(c) { %>
         <div class="item"><a href='/category/<%= c.url %>'><%= c.caption %></a></div>
         <% }); %>

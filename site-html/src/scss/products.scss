@@ -1,11 +1,16 @@
+.show-more {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
 .products {
+
   .product {
     background-color: #fff;
     padding: 1rem;
     margin-bottom: 1rem;
     position: relative;
-    box-shadow: 0 0.05rem 0.2rem rgba(153,164,171,.3);
-
+    box-shadow: 0 0.05rem 0.2rem rgba(153, 164, 171, .3);
 
     .p-badge {
       color: #fff;
@@ -41,8 +46,8 @@
       background: #fff;
       padding: 0 18px 18px;
       margin-top: -18px;
-      box-shadow: 0 5px 18px rgba(187,194,199,0.36);
-      -webkit-box-shadow: 0 5px 18px rgba(187,194,199,0.36);
+      box-shadow: 0 5px 18px rgba(187, 194, 199, 0.36);
+      -webkit-box-shadow: 0 5px 18px rgba(187, 194, 199, 0.36);
       overflow: hidden;
       -webkit-transition: all 0.3s ease;
       -moz-transition: all 0.3s ease;
@@ -62,8 +67,8 @@
     }
 
     &:hover {
-      box-shadow: 0 5px 18px rgba(187,194,199,0.36);
-      -webkit-box-shadow: 0 5px 18px rgba(187,194,199,0.36);
+      box-shadow: 0 5px 18px rgba(187, 194, 199, 0.36);
+      -webkit-box-shadow: 0 5px 18px rgba(187, 194, 199, 0.36);
 
       .button-container {
         top: 100%;
@@ -133,22 +138,24 @@
   .details {
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-top:2rem;
+    padding-top: 2rem;
   }
 }
+
 @media (max-width: 1024px) {
   .product-page {
-    .details{
+    .details {
       padding-right: 1rem;
     }
   }
 }
+
 @media (max-width: 1024px) {
   .product-page {
-    .product-info{
-      .product-order{
-        .to_cart{
-          padding-top:1rem;
+    .product-info {
+      .product-order {
+        .to_cart {
+          padding-top: 1rem;
         }
       }
     }
