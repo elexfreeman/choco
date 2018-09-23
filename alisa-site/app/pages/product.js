@@ -28,7 +28,7 @@ router.get('/', async function (req, res, next) {
         products_new = await Products.getByCategoryId(11, 10);
         discont = await Products.getDiscont(5);
         seo_call = await SeoModel.Get('main');
-        product = Products.getByUrl(Url);
+        product = await Products.getByUrl(Url);
 
         if (typeof product.description === 'string') {
             product.description = product.description.replace(/\r\n|\r|\n/g, "<br />");

@@ -5,7 +5,8 @@
       <div class="product">
        <!-- <div class="p-badge">Новый</div>-->
         <a href='/<%= p.url %>'>
-          <img class="img-responsive" src="<%= p.main_img %>">
+          <img  alt="<%= p.caption %>"
+                  class="img-responsive" src="/img/w512/<%= p.main_img.split('/')[p.main_img.split('/').length-1] %>">
         </a>
         <div class="price"><%= p.price %> руб.</div>
         <div class="caption">

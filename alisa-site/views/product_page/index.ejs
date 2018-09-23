@@ -1,52 +1,178 @@
 <% include ../base/head %>
-  <% include ../components/menu/menu_top %>
+<% include ../components/menu/menu_top %>
 
-    <div class="product-page">
-      <div class="center-container-wrap-g">
+<div class="product-page">
+    <div class="center-container-wrap-g">
         <div class="container grid-xl center-container">
-          <div class="columns">
-            <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-3">
-              <% include ../components/menu/menu_left %>
-            </div>
-            <div class="column col-xs-12 col-md-12 col-sm-12 col-lg-8 col-xl-8 col-9">
+            <div class="columns">
+                <div class="col-menu-left column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-3">
+                    <% include ../components/menu/menu_left %>
+                </div>
+                <div class="column col-xs-12 col-md-12 col-sm-12 col-lg-8 col-xl-8 col-9">
 
-              <div class="columns">
-                <div class="product-img column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-4">
-                    <div id="product_img" img='<%=product.main_img %>'>
-                        <img class="img-responsive" src='<%=product.main_img %>' alt='rouse.one - <%=product.caption %>'>
-                    </div>
-                </div>
-                <div class="product-info column col-xs-12 col-sm-12 col-lg-8 col-xl-8 col-8">
-                  <div class="info">
-                    <h1 class="caption"><%=product.caption %></h1>
-                    <div class="availability">Доступность:<span>На складе</span></div>
-                    <hr>
-                    <div class="only_left">Осталось:<span>100 шт.</span></div>
-                    <div class="price"><%=product.price %> руб.</div>
-                    <div class="description">
-                      <%=product.caption %>
-                    </div>
-                    <div class="product-order" id='product_order' product_id="<%=product.id %>" price="<%=product.price %>">
+                    <div class="columns">
+                        <div class="product-img column col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-4">
 
+                            <div id="product_img">
+                                <div class="columns">
+                                    <div class="column col-12">
+                                        <a href="#product_modal">
+                                            <div class="parallax">
+                                                <div class="parallax-top-left" tabindex="1"></div>
+                                                <div class="parallax-top-right" tabindex="2"></div>
+                                                <div class="parallax-bottom-left" tabindex="3"></div>
+                                                <div class="parallax-bottom-right" tabindex="4"></div>
+                                                <div class="parallax-content">
+                                                    <div class="parallax-front">
+                                                        <!--  <h2>tvOS parallax demo</h2>-->
+                                                    </div>
+                                                    <div class="parallax-back">
+                                                        <img src='/img/w512/<%= product.main_img.split('/')[product.main_img.split('/').length - 1] %>'
+                                                             alt='<%= product.caption %>'
+                                                             class="img-responsive rounded">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="column col-4">
+                                        <img class="img-responsive"
+                                             src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg">
+                                    </div>
+                                    <div class="column col-4">
+                                        <img class="img-responsive"
+                                             src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg">
+                                    </div>
+                                    <div class="column col-4">
+                                        <img class="img-responsive"
+                                             src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg">
+                                    </div>
+                                </div>
+
+                                <div class="modal modal-lg" id="product_modal">
+                                    <a class="modal-overlay" href="#modals-sizes" aria-label="Close"></a>
+                                    <div class="modal-container" role="document">
+                                        <div class="modal-header">
+                                            <a class="btn btn-clear float-right" href="#modals-sizes"
+                                               aria-label="Close"></a>
+                                            <div class="modal-title h5">Вкусненький шоколадик</div>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="content">
+
+                                                <div class="carousel product-slider">
+                                                    <input type="radio" id="slide-1" name="carousel-radio" hidden=""
+                                                           class="carousel-locator" checked="">
+                                                    <input type="radio" id="slide-2" name="carousel-radio" hidden=""
+                                                           class="carousel-locator">
+                                                    <input type="radio" id="slide-3" name="carousel-radio" hidden=""
+                                                           class="carousel-locator">
+                                                    <input type="radio" id="slide-4" name="carousel-radio" hidden=""
+                                                           class="carousel-locator">
+                                                    <div class="carousel-container">
+                                                        <figure class="carousel-item">
+                                                            <label class="item-prev btn btn-action btn-lg"
+                                                                   for="slide-4">
+                                                                <i class="icon icon-arrow-left"></i>
+                                                            </label>
+                                                            <label class="item-next btn btn-action btn-lg"
+                                                                   for="slide-2">
+                                                                <i class="icon icon-arrow-right"></i>
+                                                            </label>
+                                                            <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg"
+                                                                 class="img-responsive rounded"
+                                                                 alt="macOS Yosemite Wallpaper">
+                                                        </figure>
+                                                        <figure class="carousel-item">
+                                                            <label class="item-prev btn btn-action btn-lg"
+                                                                   for="slide-1">
+                                                                <i class="icon icon-arrow-left"></i>
+                                                            </label>
+                                                            <label class="item-next btn btn-action btn-lg"
+                                                                   for="slide-3">
+                                                                <i class="icon icon-arrow-right"></i>
+                                                            </label>
+                                                            <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg"
+                                                                 class="img-responsive rounded"
+                                                                 alt="macOS Yosemite Wallpaper">
+                                                        </figure>
+                                                        <figure class="carousel-item">
+                                                            <label class="item-prev btn btn-action btn-lg"
+                                                                   for="slide-2">
+                                                                <i class="icon icon-arrow-left"></i>
+                                                            </label>
+                                                            <label class="item-next btn btn-action btn-lg"
+                                                                   for="slide-4">
+                                                                <i class="icon icon-arrow-right"></i>
+                                                            </label>
+                                                            <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg"
+                                                                 class="img-responsive rounded"
+                                                                 alt="macOS Yosemite Wallpaper">
+                                                        </figure>
+                                                        <figure class="carousel-item">
+                                                            <label class="item-prev btn btn-action btn-lg"
+                                                                   for="slide-3">
+                                                                <i class="icon icon-arrow-left"></i>
+                                                            </label>
+                                                            <label class="item-next btn btn-action btn-lg"
+                                                                   for="slide-1">
+                                                                <i class="icon icon-arrow-right"></i>
+                                                            </label>
+                                                            <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg"
+                                                                 class="img-responsive rounded"
+                                                                 alt="macOS Yosemite Wallpaper">
+                                                        </figure>
+                                                    </div>
+                                                    <div class="carousel-nav">
+                                                        <label class="nav-item text-hide c-hand" for="slide-1">1</label>
+                                                        <label class="nav-item text-hide c-hand" for="slide-2">2</label>
+                                                        <label class="nav-item text-hide c-hand" for="slide-3">3</label>
+                                                        <label class="nav-item text-hide c-hand" for="slide-4">4</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a class="btn btn-link btn-lg" href="#modals-sizes">Закрыть</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="product-info column col-xs-12 col-sm-12 col-lg-8 col-xl-8 col-8">
+                            <div class="info">
+                                <h1 class="caption"><%= product.caption %></h1>
+                                <div class="availability">Доступность:<span>На складе</span></div>
+                                <hr>
+                                <div class="only_left">Осталось:<span>100 шт.</span></div>
+                                <div class="price"><%= product.price %> руб.</div>
+                                <div class="description">
+                                    <%= product.caption %>
+                                </div>
+                                <div class="product-order" id='product_order' product_id="<%= product.id %>"
+                                     price="<%= product.price %>">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details column col-xs-12">
+                            <div class="base-head">Детали</div>
+                            <div>
+                                <%= product.caption %>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <div class="details column col-xs-12">
-                  <div class="base-head">Детали</div>
-                  <div>
-                      <%=product.caption %>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-
-      <% include ../base/footer %>
     </div>
 
-    <script type="text/javascript" src="/js/common.js?v=<%= ver %>" charset="utf-8"></script>
-    <script type="text/javascript" src="/js/product.js?v=<%= ver %>" charset="utf-8"></script>
+    <% include ../base/footer %>
+</div>
 
-    <% include ../base/bottom %>
+<script type="text/javascript" src="/js/common.js?v=<%= ver %>" charset="utf-8"></script>
+<script type="text/javascript" src="/js/product.js?v=<%= ver %>" charset="utf-8"></script>
+
+<% include ../base/bottom %>
