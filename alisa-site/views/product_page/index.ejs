@@ -53,6 +53,9 @@
                                 <div class="description">
                                     <div><b>Масса:</b> <%= product.massa %> гр.</div>
                                     <div><b>Какао:</b> <%= product.cacao_percent %> %</div>
+                                    <% if ((product.filling!=null)&&(product.filling!='')) { %>
+                                    <div><b>Наполнитель:</b> <%= product.filling %></div>
+                                    <% } %>
                                 </div>
                                 <div class="product-order" id='product_order' product_id="<%= product.id %>"
                                      price="<%= product.price %>">

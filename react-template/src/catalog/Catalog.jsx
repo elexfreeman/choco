@@ -60,6 +60,9 @@ class Catalog extends Component {
                         <div className="description text-right">
                             <div><b>Масса:</b> {item.massa} гр.</div>
                             <div><b>Какао:</b> {item.cacao_percent} %</div>
+                            {item.filling && (
+                                <div><b>Наполнитель:</b> {item.filling}</div>
+                            )}
                         </div>
 
                         <div className="button-container product_order_category" product_id="1">
