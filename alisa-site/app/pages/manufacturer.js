@@ -53,6 +53,8 @@ router.get('/', function (req, res, next) {
         res.render('category_page/index', {
             title: title,
             description: description
+            , originalUrl: req.originalUrl
+            , base: '/'
             ,ver: ver,
             keywords: keywords,
             category: category,

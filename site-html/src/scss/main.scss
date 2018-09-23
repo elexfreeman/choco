@@ -67,6 +67,9 @@ $fa-font-path: "/fonts";
 
 @import "~font-awesome/scss/font-awesome";
 
+.cursor-pointer{
+  cursor: pointer;
+}
 .center-container-wrap-g {
   background-color: $gray-bg;
   padding-top: 2rem;

@@ -43,6 +43,7 @@ router.get('/', async function (req, res, next) {
         res.render('category_page/index', {
             seo: seo_call
             , base: '/'
+            , originalUrl: req.originalUrl
             ,ver: ver
             , categories: categories
             , category: category

@@ -41,6 +41,7 @@ router.get('/', async function (req, res, next) {
         res.render('product_page/index', {
             seo: seo_call
             , base: '/'
+            , originalUrl: req.originalUrl
             ,ver: ver
             , product: product
             , categories: categories

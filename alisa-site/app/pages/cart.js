@@ -79,7 +79,8 @@ router.get('/', async function (req, res, next) {
         res.render('cart_page/index.ejs', {
             seo: seo_call
             , base: '/'
-            ,ver: ver
+            , originalUrl: req.originalUrl
+            , ver: ver
             , categories: categories
             , products_new: products_new
             , products_popular: products_popular
@@ -87,7 +88,6 @@ router.get('/', async function (req, res, next) {
             , manufacturer: manufacturer
         });
     }
-
 
 
 });

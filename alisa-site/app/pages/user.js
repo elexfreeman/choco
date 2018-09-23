@@ -29,6 +29,7 @@ router.get('/', async function (req, res, next) {
         res.render('user/user.ejs', {
             seo: seo_call
             , base: '/user/'
+            , originalUrl: req.originalUrl
             ,ver: ver
             , categories: categories
             , discont: discont

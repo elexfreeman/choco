@@ -3,4 +3,20 @@
     margin-bottom: 1rem;
     cursor: pointer;
   }
+
+  .modal-product-img{
+    .modal-body{
+      max-height: 70vh;
+      img{
+        height: 95%;
+        width: auto;
+        margin: 0 auto;
+      }
+    }
+
+    .btn.btn-clear{
+      font-size: 3rem;
+    }
+
+  }
 }

@@ -32,6 +32,7 @@ router.get('/', async function (req, res, next) {
         res.render('main_page/index.ejs', {
             seo: seo_call
             , base: '/'
+            , originalUrl: req.originalUrl
             ,ver: ver
             , categories: categories
             , products_new: products_new
