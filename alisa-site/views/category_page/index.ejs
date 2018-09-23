@@ -9,31 +9,45 @@
                     <% include ../components/menu/menu_left %>
                 </div>
                 <div class="column col-xs-12 col-md-12 col-sm-12 col-lg-8 col-xl-8 col-9">
-
-                    <div class="category-cover" >
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/">Главная</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a class="active" aria-current="true" href="/catalog">
+                                Каталог
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a class="active" aria-current="true">
+                                <%= category.caption %>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="category-cover">
                         <div class="cover-container"
-                             style="background-image: url('/img/w1024/<%= category.img.split('/')[category.img.split('/').length-1] %>')">
+                             style="background-image: url('/img/w1024/<%= category.img.split('/')[category.img.split('/').length - 1] %>')">
                             <div class="container">
                                 <div class="columns">
                                     <div class="column col-3 col-md-12 col-sm-12"></div>
                                     <div class="column col-6  col-md-12 col-sm-12">
                                         <h1><%= category.caption %></h1>
-                                          <h2><%= category.description %></h2>
+                                        <h2><%= category.description %></h2>
                                     </div>
-                                        <div class="column col-3 col-md-12 col-sm-12"></div>
-                                    </div>
+                                    <div class="column col-3 col-md-12 col-sm-12"></div>
                                 </div>
                             </div>
                         </div>
-                        <% include ../components/products %>
                     </div>
+                    <% include ../components/products %>
                 </div>
             </div>
         </div>
-
-        <% include ../base/footer %>
     </div>
-    <script type="text/javascript" src="/js/common.js?v=<%= ver %>" charset="utf-8"></script>
-    <script type="text/javascript" src="/js/category.js?v=<%= ver %>" charset="utf-8"></script>
 
-    <% include ../base/bottom %>
+    <% include ../base/footer %>
+</div>
+<script type="text/javascript" src="/js/common.js?v=<%= ver %>" charset="utf-8"></script>
+<script type="text/javascript" src="/js/category.js?v=<%= ver %>" charset="utf-8"></script>
+
+<% include ../base/bottom %>

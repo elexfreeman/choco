@@ -1,19 +1,25 @@
 <div class="columns products">
-  <% category.products.forEach(function(p) { %>
+    <% category.products.forEach(function(p) { %>
     <div class="column col-sm-6 col-xs-6  col-md-6 col-lg-3 col-3">
 
-      <div class="product">
-       <!-- <div class="p-badge">Новый</div>-->
-        <a href='/<%= p.url %>'>
-          <img  alt="<%= p.caption %>"
-                  class="img-responsive" src="/img/w512/<%= p.main_img.split('/')[p.main_img.split('/').length-1] %>">
-        </a>
-        <div class="price"><%= p.price %> руб.</div>
-        <div class="caption">
-          <%= p.caption %>
+        <div class="product">
+            <!-- <div class="p-badge">Новый</div>-->
+            <a href='/<%= p.url %>'>
+                <img alt="<%= p.caption %>"
+                     class="img-responsive"
+                     src="/img/w512/<%= p.main_img.split('/')[p.main_img.split('/').length - 1] %>">
+            </a>
+            <div class="price"><%= p.price %> руб.</div>
+            <div class="caption">
+                <%= p.caption %>
+
+            </div>
+            <div class="description text-right">
+                <div><b>Масса:</b> <%= p.mass %> гр.</div>
+                <div><b>Какао:</b> <%= p.cacao_percent %>%</div>
+            </div>
+            <div class="button-container product_order_category" product_id='<%= p.id %>'></div>
         </div>
-        <div class="button-container product_order_category" product_id='<%= p.id %>'></div>
-      </div>
 
     </div>
     <% }); %>

@@ -12,38 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="catalog.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/pages/catalog.js">
+      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/product_page/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="49" column="42" lean-forward="true" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/catalog_page/index.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="49" lean-forward="true" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="menu_top.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/components/menu/menu_top.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="26" column="113" lean-forward="true" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="113" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="menu_left.ejs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/components/menu/menu_left.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+            <state relative-caret-position="309">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
         </entry>
@@ -51,8 +24,35 @@
       <file leaf-file-name="products.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/catalog_page/products.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" column="13" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="13" />
+            <state relative-caret-position="378">
+              <caret line="18" column="22" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="18" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="products_new.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/components/products_new.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="products.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/components/products.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="products_popular.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/components/products_popular.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -91,7 +91,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/models/manufacturer_model.js" />
         <option value="$PROJECT_DIR$/app/models/manufacturer_model_tests.js" />
         <option value="$PROJECT_DIR$/admin/manufacturer/routes.js" />
         <option value="$PROJECT_DIR$/app/test.js" />
@@ -117,15 +116,11 @@
         <option value="$PROJECT_DIR$/app/api/image_resize_1024.js" />
         <option value="$PROJECT_DIR$/app/api/image_resize_128.js" />
         <option value="$PROJECT_DIR$/app/api/image_resize_512.js" />
-        <option value="$PROJECT_DIR$/views/components/products_popular.ejs" />
         <option value="$PROJECT_DIR$/views/main_page/index.ejs" />
         <option value="$PROJECT_DIR$/app/models/image_resize_model.js" />
         <option value="$PROJECT_DIR$/views/base/navbar.ejs" />
-        <option value="$PROJECT_DIR$/views/category_page/index.ejs" />
-        <option value="$PROJECT_DIR$/views/components/products.ejs" />
         <option value="$PROJECT_DIR$/app/models/product_model.js" />
         <option value="$PROJECT_DIR$/app/api/product_api.js" />
-        <option value="$PROJECT_DIR$/views/product_page/index.ejs" />
         <option value="$PROJECT_DIR$/views/base/head.ejs" />
         <option value="$PROJECT_DIR$/app/pages/cart.js" />
         <option value="$PROJECT_DIR$/app/pages/product.js" />
@@ -137,11 +132,16 @@
         <option value="$PROJECT_DIR$/app/api/products_api.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/app/models/products_model.js" />
-        <option value="$PROJECT_DIR$/views/catalog_page/products.ejs" />
         <option value="$PROJECT_DIR$/app/pages/catalog.js" />
         <option value="$PROJECT_DIR$/views/catalog_page/index.ejs" />
         <option value="$PROJECT_DIR$/views/components/menu/menu_top.ejs" />
         <option value="$PROJECT_DIR$/views/components/menu/menu_left.ejs" />
+        <option value="$PROJECT_DIR$/views/catalog_page/products.ejs" />
+        <option value="$PROJECT_DIR$/views/category_page/index.ejs" />
+        <option value="$PROJECT_DIR$/views/components/products_popular.ejs" />
+        <option value="$PROJECT_DIR$/views/components/products_new.ejs" />
+        <option value="$PROJECT_DIR$/views/components/products.ejs" />
+        <option value="$PROJECT_DIR$/views/product_page/index.ejs" />
       </list>
     </option>
   </component>
@@ -441,7 +441,7 @@
       <workItem from="1537604448120" duration="13955000" />
       <workItem from="1537632343479" duration="2127000" />
       <workItem from="1537695955248" duration="2283000" />
-      <workItem from="1537706062650" duration="8034000" />
+      <workItem from="1537706062650" duration="10271000" />
     </task>
     <task id="LOCAL-00001" summary="product page">
       <created>1521668784482</created>
@@ -454,7 +454,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212602000" />
+    <option name="totallyTimeSpent" value="214839000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -542,13 +542,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="104" selection-start-column="84" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/category.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
@@ -654,13 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/components/products_popular.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/products/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
@@ -700,13 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="85" column="114" selection-start-line="85" selection-start-column="64" selection-end-line="85" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/category_page/index.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="14" column="70" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="70" />
         </state>
       </provider>
     </entry>
@@ -788,13 +767,6 @@
     <entry file="file://$PROJECT_DIR$/app/api/catalog_api.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/product_page/index.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="33" column="39" lean-forward="true" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/api/products_api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -813,13 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="30" selection-start-column="19" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/components/products.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -858,24 +823,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/catalog_page/index.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="49" lean-forward="true" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/base/navbar.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/catalog_page/products.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -890,6 +841,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/category_page/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/catalog_page/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/catalog_page/products.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="22" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/components/products_popular.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/components/products_new.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/components/products.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/product_page/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>

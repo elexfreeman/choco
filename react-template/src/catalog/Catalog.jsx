@@ -53,8 +53,14 @@ class Catalog extends Component {
                             <img className="img-responsive"
                                  src={rest_server + 'img/w512/' + item.main_img.split('/')[item.main_img.split('/').length - 1]}/>
                         </a>
+
                         <div className="price">{pricePipe(item.price)} руб.</div>
                         <div className="caption">{item.caption}</div>
+
+                        <div className="description text-right">
+                            <div><b>Масса:</b> {item.massa} гр.</div>
+                            <div><b>Какао:</b> {item.cacao_percent} %</div>
+                        </div>
 
                         <div className="button-container product_order_category" product_id="1">
                             <ProductOrderCategory productId={item.id}/>

@@ -48,10 +48,11 @@
                                 <h1 class="caption"><%= product.caption %></h1>
                                 <div class="availability">Доступность:<span>На складе</span></div>
                                 <hr>
-                                <div class="only_left">Осталось:<span>100 шт.</span></div>
+                                <div class="only_left">Осталось:<span> 100 шт.</span></div>
                                 <div class="price"><%= product.price %> руб.</div>
                                 <div class="description">
-                                    <%= product.caption %>
+                                    <div><b>Масса:</b> <%= product.massa %> гр.</div>
+                                    <div><b>Какао:</b> <%= product.cacao_percent %> %</div>
                                 </div>
                                 <div class="product-order" id='product_order' product_id="<%= product.id %>"
                                      price="<%= product.price %>">
@@ -59,12 +60,15 @@
                                 </div>
                             </div>
                         </div>
+                        <% if (product.description.length > 0) { %>
                         <div class="details column col-xs-12">
                             <div class="base-head">Детали</div>
                             <div>
-                                <%= product.caption %>
+                                <%= product.description %>
                             </div>
                         </div>
+                        <% } %>
+
                     </div>
                 </div>
             </div>
