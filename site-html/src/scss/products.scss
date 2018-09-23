@@ -7,10 +7,13 @@
 
   .product {
     background-color: #fff;
-    padding: 1rem;
     margin-bottom: 1rem;
     position: relative;
     box-shadow: 0 0.05rem 0.2rem rgba(153, 164, 171, .3);
+
+    .product-wraper{
+      padding: 1rem;
+    }
 
     .p-badge {
       color: #fff;

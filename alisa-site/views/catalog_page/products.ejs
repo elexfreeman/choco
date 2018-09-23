@@ -9,19 +9,22 @@
                      class="img-responsive"
                      src="/img/w512/<%= p.main_img.split('/')[p.main_img.split('/').length - 1] %>">
             </a>
+            <div class="product-wraper">
 
-            <div class="price"><%= p.price %> руб.</div>
-            <div class="caption">
-                <%= p.caption %>
-                <div class="description text-right">
-                    <div><b>Масса:</b> <%= p.mass %> гр.</div>
-                    <div><b>Какао:</b> <%= p.cacao_percent %>%</div>
-                    <% if ((p.filling!=null)&&(p.filling!='')) { %>
-                    <div><b>Наполнитель:</b> <%= p.filling %></div>
-                    <% } %>
+                <div class="price"><%= p.price %> руб.</div>
+                <div class="caption">
+                    <%= p.caption %>
+                    <div class="description text-right">
+                        <div><b>Масса:</b> <%= p.mass %> гр.</div>
+                        <div><b>Какао:</b> <%= p.cacao_percent %>%</div>
+                        <% if ((p.filling != null) && (p.filling != '')) { %>
+                        <div><b>Наполнитель:</b> <%= p.filling %></div>
+                        <% } %>
+                    </div>
                 </div>
+                <div class="button-container product_order_category" product_id='<%= p.id %>'></div>
+
             </div>
-            <div class="button-container product_order_category" product_id='<%= p.id %>'></div>
         </div>
 
     </div>
