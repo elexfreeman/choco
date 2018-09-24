@@ -15,8 +15,8 @@
       <file leaf-file-name="products.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/catalog_page/products.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="36" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="36" />
+            <state relative-caret-position="315">
+              <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -406,7 +406,7 @@
       <workItem from="1537632343479" duration="2127000" />
       <workItem from="1537695955248" duration="2283000" />
       <workItem from="1537706062650" duration="13030000" />
-      <workItem from="1537776887967" duration="1315000" />
+      <workItem from="1537776887967" duration="2937000" />
     </task>
     <task id="LOCAL-00001" summary="product page">
       <created>1521668784482</created>
@@ -419,7 +419,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218913000" />
+    <option name="totallyTimeSpent" value="220535000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -440,9 +440,9 @@
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.14917128" />
       <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49520257" weight="0.19005525" />
       <window_info id="npm" order="1" sideWeight="0.5013123" side_tool="true" weight="0.15458423" />
-      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.49733475" visible="true" weight="0.17458564" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" sideWeight="0.49733475" visible="true" weight="0.17458564" />
       <window_info anchor="right" id="Remote Host" order="1" weight="0.15191898" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49868765" visible="true" weight="0.18283582" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49868765" visible="true" weight="0.18283582" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
@@ -850,8 +850,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/catalog_page/products.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="36" />
+        <state relative-caret-position="315">
+          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
         </state>
       </provider>
     </entry>

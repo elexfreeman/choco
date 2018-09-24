@@ -83,8 +83,8 @@ class UserCart extends Component {
                                         checkout={this.onCheckout}/>
                                 </div>
                             ) : (
-                                <div>
-                                    Корзина пустая
+                                <div className='cart-empty'>
+                                    Ваша корзина пустая
                                 </div>
                             )}
                         </div>
@@ -103,8 +103,8 @@ class UserCart extends Component {
                                     checkout={this.onCheckout}/>
                             </div>
                         ) : (
-                            <div>
-                                Корзина пустая
+                            <div className='cart-empty'>
+                                Ваша корзина пустая
                             </div>
                         )}
                     </div>

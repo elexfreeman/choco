@@ -4,7 +4,7 @@ import PriceFormatter from '../formatters/PriceFormater'
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {onChangeCount, onDelete, onGetCart } from '../redux/actions/cart';
+import {onChangeCount, onDelete, onGetCart} from '../redux/actions/cart';
 import CartItemDeleteModal from "./CartItemDeleteModal";
 import {rest_server} from "../models/settings";
 
@@ -41,7 +41,7 @@ class CartItem extends Component {
         this.props.onChangeCount({
             productId: this.props.item.id
             , count: parseInt(count)
-            ,cart: this.props.products
+            , cart: this.props.products
         });
 
         //this.props.onGetCart();
@@ -49,7 +49,6 @@ class CartItem extends Component {
 
     handlDelete() {
         // event.preventDefault();
-        console.log('del');
         this.setState({modalDeleteVisible: 'active'});
     }
 
@@ -57,7 +56,7 @@ class CartItem extends Component {
         this.setState({modalDeleteVisible: ''})
     }
 
-    onDeleteProductItem(){
+    onDeleteProductItem() {
         this.props.onDelete(this.props.item.id);
         this.setState({modalDeleteVisible: ''});
         this.props.onGetCart();
@@ -67,17 +66,20 @@ class CartItem extends Component {
         return (<tr>
 
             <td>
-                <img className='product-img' src={rest_server + this.props.item.main_img}/>
+                <img className='product-img'
+                     src={rest_server + 'img/w128/' + this.props.item.main_img.split('/')[this.props.item.main_img.split('/').length - 1]}/>
             </td>
-            <td>{this.props.item.caption}</td>
+            <td>
+                <a target='_blank' href={rest_server + this.props.item.url}>{this.props.item.caption}</a>
+            </td>
 
-            <td><PriceFormatter price={this.props.item.price} /></td>
+            <td><PriceFormatter price={this.props.item.price}/></td>
 
             <td className='count'>
                 <input type='number' value={this.state.count} onChange={this.handlCountChange} className="form-input"/>
             </td>
 
-            <td><PriceFormatter price={this.props.item.price * this.state.count} /></td>
+            <td><PriceFormatter price={this.props.item.price * this.state.count}/></td>
 
             <td>
                 <button onClick={this.handlDelete} className="btn">
